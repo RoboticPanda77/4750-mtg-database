@@ -368,10 +368,6 @@ Enigma Drake's power is equal to the number of instant and sorcery cards in your
 31861,Svetlin Velinov,"B,R,U",4,,1,1,,{1}{U}{B}{R},4,e740ce57-8692-51e3-b7f7-f715054f17a8,447354,"Nicol Bolas, the Ravager // Nicol Bolas, the Arisen",218,$26.76 ,4,mythic,M19,"Elder,Dragon","Flying
 When Nicol Bolas, the Ravager enters the battlefield, each opponent discards a card.
 {4}{U}{B}{R}: Exile Nicol Bolas, the Ravager, then return him to the battlefield transformed under his owner's control. Activate only as a sorcery.",4,Creature
-31862,Svetlin Velinov,"B,R,U",4,,1,1,7,,4,19ade069-45aa-5137-b4b7-afdde5f864d3,447355,"Nicol Bolas, the Ravager // Nicol Bolas, the Arisen",218,$26.76 ,,mythic,M19,Bolas,"[+2]: Draw two cards.
-[−3]: Nicol Bolas, the Arisen deals 10 damage to target creature or planeswalker.
-[−4]: Put target creature or planeswalker card from a graveyard onto the battlefield under your control.
-[−12]: Exile all but the bottom card of target player's library.",,Planeswalker
 31863,Svetlin Velinov,"G,R,W",6,Sister of Nicol Bolas. Survivor of the Elder Dragon War. The most vicious of her kin.,1,1,,{3}{R}{G}{W},6,02a84d04-6bc2-5416-bb62-311e705cb9ab,447356,"Palladia-Mors, the Ruiner",219,$0.93 ,6,mythic,M19,"Elder,Dragon","Flying, vigilance, trample
 Palladia-Mors, the Ruiner has hexproof if it hasn't dealt damage yet.",6,Creature
 31864,Dmitry Burmak,"B,G",4,,1,1,,{2}{B}{G},4,d0ec5de2-7bec-5434-976a-74ba40d7c68d,447357,Poison-Tip Archer,220,$1.13 ,2,uncommon,M19,"Elf,Archer","Reach (This creature can block creatures with flying.)
