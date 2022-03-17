@@ -1,0 +1,610 @@
+index,baseSetSize,code,name,releaseDate
+0,383,10E,Tenth Edition,2007-07-13
+1,302,2ED,Unlimited Edition,1993-12-01
+2,332,2XM,Double Masters,2020-08-07
+3,306,3ED,Revised Edition,1994-04-01
+4,378,4BB,Fourth Edition Foreign Black Border,1995-04-01
+5,378,4ED,Fourth Edition,1995-04-01
+6,165,5DN,Fifth Dawn,2004-06-04
+7,455,5ED,Fifth Edition,1997-03-24
+8,350,6ED,Classic Sixth Edition,1999-04-21
+9,350,7ED,Seventh Edition,2001-04-11
+10,350,8ED,Eighth Edition,2003-07-28
+11,350,9ED,Ninth Edition,2005-07-29
+12,249,A25,Masters 25,2018-03-16
+13,0,AAFR,Adventures in the Forgotten Realms Art Series,2021-07-23
+14,184,AER,Aether Revolt,2017-01-20
+15,62,AFC,Forgotten Realms Commander,2021-07-23
+16,281,AFR,Adventures in the Forgotten Realms,2021-07-23
+17,18,AJMP,Jumpstart Arena Exclusives,2020-07-17
+18,269,AKH,Amonkhet,2017-04-28
+19,0,AKHM,Kaldheim Art Series,2021-02-05
+20,338,AKR,Amonkhet Remastered,2020-08-13
+21,249,ALA,Shards of Alara,2008-10-03
+22,199,ALL,Alliances,1996-06-10
+23,54,AMH1,Modern Horizons Art Series,2019-06-05
+24,0,AMH2,Modern Horizons 2 Art Series,2021-06-18
+25,0,AMID,Midnight Hunt Art Series,2021-09-24
+26,40,ANA,Arena New Player Experience,2018-07-14
+27,116,ANB,Arena Beginner Set,2020-08-13
+28,0,ANEO,Neon Dynasty Art Series,2022-02-18
+29,143,APC,Apocalypse,2001-06-04
+30,145,ARB,Alara Reborn,2009-04-30
+31,150,ARC,Archenemy,2010-06-18
+32,78,ARN,Arabian Nights,1993-12-17
+33,0,ASTX,Strixhaven Art Series,2021-04-23
+34,85,ATH,Anthologies,1998-11-01
+35,100,ATQ,Antiquities,1994-03-04
+36,0,AVOW,Crimson Vow Art Series,2021-11-19
+37,244,AVR,Avacyn Restored,2012-05-04
+38,0,AZNR,Zendikar Rising Art Series,2020-09-25
+39,254,BBD,Battlebond,2018-06-08
+40,274,BFZ,Battle for Zendikar,2015-10-02
+41,165,BNG,Born of the Gods,2014-02-07
+42,165,BOK,Betrayers of Kamigawa,2005-02-04
+43,136,BRB,Battle Royale Box Set,1999-11-12
+44,90,BTD,Beatdown Box Set,2000-10-01
+45,356,C13,Commander 2013,2013-11-01
+46,337,C14,Commander 2014,2014-11-07
+47,342,C15,Commander 2015,2015-11-13
+48,351,C16,Commander 2016,2016-11-11
+49,309,C17,Commander 2017,2017-08-25
+50,307,C18,Commander 2018,2018-08-09
+51,302,C19,Commander 2019,2019-08-23
+52,322,C20,Commander 2020,2020-04-17
+53,81,C21,Commander 2021,2021-04-23
+54,8,CC1,Commander Collection: Green,2020-12-04
+55,8,CC2,Commander Collection: Black,2022-01-28
+56,302,CED,Collectors’ Edition,1993-12-10
+57,302,CEI,Intl. Collectors’ Edition,1993-12-10
+58,306,CHK,Champions of Kamigawa,2004-10-01
+59,125,CHR,Chronicles,1995-07-01
+60,18,CM1,Commander's Arsenal,2012-11-02
+61,312,CM2,Commander Anthology Volume II,2018-06-08
+62,320,CMA,Commander Anthology,2017-06-09
+63,121,CMB1,Mystery Booster Playtest Cards 2019,2019-11-07
+64,121,CMB2,Mystery Booster Playtest Cards 2021,2021-08-20
+65,318,CMD,Commander 2011,2011-06-17
+66,361,CMR,Commander Legends,2020-11-20
+67,221,CN2,Conspiracy: Take the Crown,2016-08-26
+68,210,CNS,Conspiracy,2014-06-06
+69,145,CON,Conflux,2009-02-06
+70,6,CP1,Magic 2015 Clash Pack,2014-07-18
+71,6,CP2,Fate Reforged Clash Pack,2015-01-23
+72,6,CP3,Magic Origins Clash Pack,2015-07-17
+73,155,CSP,Coldsnap,2006-07-21
+74,62,CST,Coldsnap Theme Decks,2006-07-21
+75,633,DBL,Innistrad: Double Feature,2022-01-28
+76,62,DD1,Duel Decks: Elves vs. Goblins,2007-11-16
+77,62,DD2,Duel Decks: Jace vs. Chandra,2008-11-07
+78,62,DDC,Duel Decks: Divine vs. Demonic,2009-04-10
+79,63,DDD,Duel Decks: Garruk vs. Liliana,2009-10-30
+80,71,DDE,Duel Decks: Phyrexia vs. the Coalition,2010-03-19
+81,79,DDF,Duel Decks: Elspeth vs. Tezzeret,2010-09-03
+82,81,DDG,Duel Decks: Knights vs. Dragons,2011-04-01
+83,80,DDH,Duel Decks: Ajani vs. Nicol Bolas,2011-09-02
+84,77,DDI,Duel Decks: Venser vs. Koth,2012-03-30
+85,90,DDJ,Duel Decks: Izzet vs. Golgari,2012-09-07
+86,80,DDK,Duel Decks: Sorin vs. Tibalt,2013-03-15
+87,81,DDL,Duel Decks: Heroes vs. Monsters,2013-09-06
+88,88,DDM,Duel Decks: Jace vs. Vraska,2014-03-14
+89,82,DDN,Duel Decks: Speed vs. Cunning,2014-09-05
+90,67,DDO,Duel Decks: Elspeth vs. Kiora,2015-02-27
+91,80,DDP,Duel Decks: Zendikar vs. Eldrazi,2015-08-28
+92,80,DDQ,Duel Decks: Blessed vs. Cursed,2016-02-26
+93,76,DDR,Duel Decks: Nissa vs. Ob Nixilis,2016-09-02
+94,65,DDS,Duel Decks: Mind vs. Might,2017-03-31
+95,63,DDT,Duel Decks: Merfolk vs. Goblins,2017-10-24
+96,76,DDU,Duel Decks: Elves vs. Inventors,2018-04-06
+97,156,DGM,Dragon's Maze,2013-05-03
+98,180,DIS,Dissension,2006-05-05
+99,158,DKA,Dark Ascension,2012-02-03
+100,50,DKM,Deckmasters,2001-12-01
+101,269,DOM,Dominaria,2018-04-27
+102,113,DPA,Duels of the Planeswalkers,2010-06-04
+103,15,DRB,From the Vault: Dragons,2008-08-29
+104,119,DRK,The Dark,1994-08-01
+105,165,DST,Darksteel,2004-02-06
+106,264,DTK,Dragons of Tarkir,2015-03-27
+107,62,DVD,Duel Decks Anthology: Divine vs. Demonic,2014-12-05
+108,106,E01,Archenemy: Nicol Bolas,2017-06-16
+109,47,E02,Explorers of Ixalan,2017-11-24
+110,269,ELD,Throne of Eldraine,2019-10-04
+111,249,EMA,Eternal Masters,2016-06-10
+112,205,EMN,Eldritch Moon,2016-07-22
+113,180,EVE,Eventide,2008-07-25
+114,62,EVG,Duel Decks Anthology: Elves vs. Goblins,2014-12-05
+115,143,EXO,Exodus,1998-06-15
+116,45,EXP,Zendikar Expeditions,2015-10-02
+117,7,F01,Friday Night Magic 2001,2001-01-01
+118,12,F02,Friday Night Magic 2002,2002-01-01
+119,12,F03,Friday Night Magic 2003,2003-01-01
+120,12,F04,Friday Night Magic 2004,2004-01-01
+121,12,F05,Friday Night Magic 2005,2005-01-01
+122,12,F06,Friday Night Magic 2006,2006-01-01
+123,12,F07,Friday Night Magic 2007,2007-01-01
+124,12,F08,Friday Night Magic 2008,2008-01-01
+125,12,F09,Friday Night Magic 2009,2009-01-01
+126,12,F10,Friday Night Magic 2010,2010-01-01
+127,12,F11,Friday Night Magic 2011,2011-01-01
+128,12,F12,Friday Night Magic 2012,2012-01-01
+129,12,F13,Friday Night Magic 2013,2013-01-01
+130,12,F14,Friday Night Magic 2014,2014-01-01
+131,12,F15,Friday Night Magic 2015,2015-01-01
+132,12,F16,Friday Night Magic 2016,2016-01-01
+133,12,F17,Friday Night Magic 2017,2017-01-01
+134,12,F18,Friday Night Magic 2018,2017-12-27
+135,306,FBB,Foreign Black Border,1994-04-01
+136,187,FEM,Fallen Empires,1994-11-01
+137,0,FJMP,Jumpstart Front Cards,2020-06-18
+138,248,FMB1,Mystery Booster Retail Edition Foils,2020-03-08
+139,350,FNM,Friday Night Magic 2000,2000-01-01
+140,185,FRF,Fate Reforged,2015-01-23
+141,180,FUT,Future Sight,2007-05-04
+142,2,G00,Judge Gift Cards 2000,2000-01-01
+143,2,G01,Judge Gift Cards 2001,2001-01-01
+144,2,G02,Judge Gift Cards 2002,2002-01-01
+145,3,G03,Judge Gift Cards 2003,2003-01-01
+146,6,G04,Judge Gift Cards 2004,2004-01-01
+147,4,G05,Judge Gift Cards 2005,2005-01-01
+148,4,G06,Judge Gift Cards 2006,2006-01-01
+149,5,G07,Judge Gift Cards 2007,2007-01-01
+150,5,G08,Judge Gift Cards 2008,2008-01-01
+151,10,G09,Judge Gift Cards 2009,2009-01-01
+152,8,G10,Judge Gift Cards 2010,2010-01-01
+153,8,G11,Judge Gift Cards 2011,2011-01-01
+154,5,G17,2017 Gift Pack,2017-10-20
+155,5,G18,M19 Gift Pack,2018-11-16
+156,350,G99,Judge Gift Cards 1999,1999-01-01
+157,127,GK1,GRN Guild Kit,2018-11-02
+158,133,GK2,RNA Guild Kit,2019-02-15
+159,64,GN2,Game Night 2019,2019-11-15
+160,68,GNT,Game Night,2018-11-16
+161,165,GPT,Guildpact,2006-02-03
+162,259,GRN,Guilds of Ravnica,2018-10-05
+163,40,GS1,Global Series Jiang Yanggu & Mu Yanling,2018-06-22
+164,249,GTC,Gatecrash,2013-02-01
+165,63,GVL,Duel Decks Anthology: Garruk vs. Liliana,2014-12-05
+166,41,H09,Premium Deck Series: Slivers,2009-11-20
+167,4,H17,HasCon 2017,2017-09-20
+168,40,H1R,Modern Horizons 1 Timeshifts,2021-06-18
+169,20,HA1,Historic Anthology 1,2019-11-21
+170,25,HA2,Historic Anthology 2,2020-03-12
+171,27,HA3,Historic Anthology 3,2020-05-21
+172,25,HA4,Historic Anthology 4,2021-03-11
+173,25,HA5,Historic Anthology 5,2021-05-27
+174,17,HHO,Happy Holidays,2006-12-31
+175,140,HML,Homelands,1995-10-01
+176,169,HOP,Planechase,2009-09-04
+177,199,HOU,Hour of Devastation,2017-07-14
+178,3,HTR16,2016 Heroes of the Realm,2017-09-20
+179,3,HTR17,2017 Heroes of the Realm,2018-08-01
+180,4,HTR18,2018 Heroes of the Realm,2019-08-01
+181,7,HTR19,2019 Heroes of the Realm,2020-08-01
+182,3,HTR20,2020 Heroes of the Realm,2021-08-01
+183,383,ICE,Ice Age,1995-06-03
+184,274,IKO,Ikoria: Lair of Behemoths,2020-04-24
+185,249,IMA,Iconic Masters,2017-11-17
+186,350,INV,Invasion,2000-10-02
+187,264,ISD,Innistrad,2011-09-30
+188,67,ITP,Introductory Two-Player Set,1996-12-31
+189,8,J12,Judge Gift Cards 2012,2012-01-01
+190,8,J13,Judge Gift Cards 2013,2013-01-01
+191,9,J14,Judge Gift Cards 2014,2014-01-01
+192,8,J15,Judge Gift Cards 2015,2015-01-01
+193,8,J16,Judge Gift Cards 2016,2016-01-01
+194,8,J17,Judge Gift Cards 2017,2017-01-01
+195,8,J18,Judge Gift Cards 2018,2018-01-01
+196,8,J19,Judge Gift Cards 2019,2019-04-10
+197,10,J20,Judge Gift Cards 2020,2020-01-01
+198,388,J21,Jumpstart: Historic Horizons,2021-08-26
+199,3,JGP,Judge Gift Cards 1998,1998-01-01
+200,495,JMP,Jumpstart,2020-07-17
+201,165,JOU,Journey into Nyx,2014-05-02
+202,143,JUD,Judgment,2002-05-27
+203,62,JVC,Duel Decks Anthology: Jace vs. Chandra,2014-12-05
+204,1,KHC,Kaldheim Commander,2021-02-05
+205,285,KHM,Kaldheim,2021-02-05
+206,264,KLD,Kaladesh,2016-09-30
+207,301,KLR,Kaladesh Remastered,2020-11-12
+208,269,KTK,Khans of Tarkir,2014-09-26
+209,2,L12,League Tokens 2012,2012-01-01
+210,4,L13,League Tokens 2013,2013-01-01
+211,4,L14,League Tokens 2014,2014-01-01
+212,1,L15,League Tokens 2015,2015-01-01
+213,1,L16,League Tokens 2016,2016-01-01
+214,1,L17,League Tokens 2017,2017-01-01
+215,295,LEA,Limited Edition Alpha,1993-08-05
+216,302,LEB,Limited Edition Beta,1993-10-04
+217,310,LEG,Legends,1994-06-01
+218,145,LGN,Legions,2003-02-03
+219,301,LRW,Lorwyn,2007-10-12
+220,249,M10,Magic 2010,2009-07-17
+221,249,M11,Magic 2011,2010-07-16
+222,249,M12,Magic 2012,2011-07-15
+223,249,M13,Magic 2013,2012-07-13
+224,249,M14,Magic 2014,2013-07-19
+225,269,M15,Magic 2015,2014-07-18
+226,280,M19,Core Set 2019,2018-07-13
+227,280,M20,Core Set 2020,2019-07-12
+228,274,M21,Core Set 2021,2020-07-03
+229,5,MAFR,Adventures in the Forgotten Realms Minigames,2021-07-23
+230,249,MB1,Mystery Booster,2019-11-07
+231,155,MBS,Mirrodin Besieged,2011-02-04
+232,26,MD1,Modern Event Deck 2014,2014-05-30
+233,195,ME1,Masters Edition,2007-09-10
+234,245,ME2,Masters Edition II,2008-09-22
+235,230,ME3,Masters Edition III,2009-09-07
+236,260,ME4,Masters Edition IV,2011-01-10
+237,24,MED,Mythic Edition,2018-10-05
+238,10,MGB,Multiverse Gift Box,1996-11-01
+239,254,MH1,Modern Horizons,2019-06-14
+240,303,MH2,Modern Horizons 2,2021-06-18
+241,38,MIC,Midnight Hunt Commander,2021-09-24
+242,277,MID,Innistrad: Midnight Hunt,2021-09-24
+243,350,MIR,Mirage,1996-10-08
+244,5,MKHM,Kaldheim Minigames,2021-02-05
+245,249,MM2,Modern Masters 2015,2015-05-22
+246,249,MM3,Modern Masters 2017,2017-03-17
+247,229,MMA,Modern Masters,2013-06-07
+248,5,MMH2,Modern Horizons 2 Minigames,2021-06-18
+249,350,MMQ,Mercadian Masques,1999-10-04
+250,150,MOR,Morningtide,2008-02-01
+251,54,MP2,Amonkhet Invocations,2017-04-28
+252,8,MPR,Magic Player Rewards 2001,2001-01-01
+253,54,MPS,Kaladesh Inventions,2016-09-30
+254,306,MRD,Mirrodin,2003-10-02
+255,5,MSTX,Strixhaven: School of Mages Minigames,2021-04-23
+256,0,MVOW,Innistrad: Crimson Vow Minigames,2021-11-19
+257,5,MZNR,Zendikar Rising Minigames,2020-09-25
+258,38,NEC,Neon Dynasty Commander,2022-02-18
+259,143,NEM,Nemesis,2000-02-14
+260,302,NEO,Kamigawa: Neon Dynasty,2022-02-18
+261,175,NPH,New Phyrexia,2011-05-13
+262,4,OAFC,Forgotten Realms Commander Display Commanders,2021-07-23
+263,14,OANA,Arena New Player Experience Cards,2018-07-14
+264,45,OARC,Archenemy Schemes,2010-06-18
+265,15,OC13,Commander 2013 Oversized,2013-11-01
+266,5,OC14,Commander 2014 Oversized,2014-11-07
+267,5,OC15,Commander 2015 Oversized,2015-11-13
+268,5,OC16,Commander 2016 Oversized,2016-11-11
+269,4,OC17,Commander 2017 Oversized,2017-08-25
+270,4,OC18,Commander 2018 Oversized,2018-08-09
+271,4,OC19,Commander 2019 Oversized,2019-08-31
+272,5,OC20,Commander 2020 Oversized,2020-04-17
+273,5,OC21,Commander 2021 Display Commanders,2021-04-23
+274,10,OCM1,Commander's Arsenal Oversized,2012-11-02
+275,15,OCMD,Commander 2011 Oversized,2011-06-17
+276,350,ODY,Odyssey,2001-10-01
+277,20,OE01,Archenemy: Nicol Bolas Schemes,2017-06-16
+278,184,OGW,Oath of the Gatewatch,2016-01-22
+279,40,OHOP,Planechase Planes,2009-09-04
+280,21,OLGC,Legacy Championship,2011-01-01
+281,2,OMIC,Midnight Hunt Commander Display Commanders,2021-09-24
+282,350,ONS,Onslaught,2002-10-07
+283,40,OPC2,Planechase 2012 Planes,2012-06-01
+284,86,OPCA,Planechase Anthology Planes,2018-12-25
+285,272,ORI,Magic Origins,2015-07-17
+286,29,OVNT,Vintage Championship,2003-01-01
+287,2,OVOC,Crimson Vow Commander Display Commanders,2021-11-19
+288,165,P02,Portal Second Age,1998-06-24
+289,1,P03,Magic Player Rewards 2003,2003-01-01
+290,1,P04,Magic Player Rewards 2004,2004-01-01
+291,6,P05,Magic Player Rewards 2005,2005-01-01
+292,7,P06,Magic Player Rewards 2006,2006-01-01
+293,7,P07,Magic Player Rewards 2007,2007-01-01
+294,7,P08,Magic Player Rewards 2008,2008-01-01
+295,7,P09,Magic Player Rewards 2009,2009-01-01
+296,9,P10,Magic Player Rewards 2010,2010-01-01
+297,1,P10E,Tenth Edition Promos,2007-07-13
+298,9,P11,Magic Player Rewards 2011,2011-01-01
+299,2,P15A,15th Anniversary Cards,2008-04-01
+300,3,P22,Judge Gift Cards 2022,2022-01-01
+301,1,P2HG,Two-Headed Giant Tournament,2005-12-09
+302,1,P5DN,Fifth Dawn Promos,2004-06-04
+303,1,P8ED,Eighth Edition Promos,2003-07-28
+304,2,P9ED,Ninth Edition Promos,2005-07-29
+305,65,PAER,Aether Revolt Promos,2017-01-20
+306,240,PAFR,Adventures in the Forgotten Realms Promos,2021-07-23
+307,76,PAKH,Amonkhet Promos,2017-04-28
+308,11,PAL00,Arena League 2000,2000-01-01
+309,12,PAL01,Arena League 2001,2001-01-01
+310,5,PAL02,Arena League 2002,2002-01-01
+311,8,PAL03,Arena League 2003,2003-01-01
+312,8,PAL04,Arena League 2004,2004-01-01
+313,8,PAL05,Arena League 2005,2005-01-01
+314,8,PAL06,Arena League 2006,2006-01-01
+315,350,PAL99,Arena League 1999,1999-01-01
+316,1,PALA,Shards of Alara Promos,2008-10-03
+317,15,PALP,Asia Pacific Land Program,1998-09-01
+318,3,PANA,MTG Arena Promos,2018-07-14
+319,1,PAPC,Apocalypse Promos,2001-06-04
+320,2,PARB,Alara Reborn Promos,2009-04-30
+321,5,PARC,Promotional Schemes,2010-06-18
+322,7,PARL,Arena League 1996,1996-08-02
+323,12,PAST,Astral Cards,1997-04-01
+324,5,PAVR,Avacyn Restored Promos,2012-04-28
+325,22,PBBD,Battlebond Promos,2018-06-08
+326,89,PBFZ,Battle for Zendikar Promos,2015-10-02
+327,9,PBNG,Born of the Gods Promos,2014-02-01
+328,2,PBOK,Betrayers of Kamigawa Promos,2005-02-04
+329,1,PBOOK,Miscellaneous Book Promos,2009-01-27
+330,156,PC2,Planechase 2012,2012-06-01
+331,156,PCA,Planechase Anthology,2016-11-25
+332,7,PCEL,Celebration Cards,1996-08-14
+333,1,PCHK,Champions of Kamigawa Promos,2004-10-01
+334,5,PCMD,Commander 2011 Launch Party,2011-06-17
+335,12,PCMP,Champs and States,2006-03-18
+336,1,PCNS,Conspiracy Promos,2014-06-06
+337,2,PCON,Conflux Promos,2009-02-06
+338,1,PCSP,Coldsnap Promos,2006-07-21
+339,143,PCY,Prophecy,2000-06-05
+340,34,PD2,Premium Deck Series: Fire and Lightning,2010-11-19
+341,50,PD3,Premium Deck Series: Graveborn,2011-11-18
+342,6,PDGM,Dragon's Maze Promos,2013-04-27
+343,2,PDIS,Dissension Promos,2006-05-05
+344,5,PDKA,Dark Ascension Promos,2012-01-28
+345,118,PDOM,Dominaria Promos,2018-04-27
+346,2,PDP10,Duels of the Planeswalkers 2010 Promos,2010-01-01
+347,3,PDP12,Duels of the Planeswalkers 2012 Promos,2011-01-01
+348,3,PDP13,Duels of the Planeswalkers 2013 Promos,2012-01-01
+349,3,PDP14,Duels of the Planeswalkers 2014 Promos,2013-01-01
+350,269,PDP15,Duels of the Planeswalkers 2015 Promos,2014-01-01
+351,1,PDRC,Dragon Con,1994-07-15
+352,1,PDST,Darksteel Promos,2004-06-04
+353,51,PDTK,Dragons of Tarkir Promos,2015-03-27
+354,1,PDTP,Duels of the Planeswalkers 2009 Promos,2009-01-01
+355,150,PELD,Throne of Eldraine Promos,2019-10-04
+356,15,PELP,European Land Program,2000-02-05
+357,76,PEMN,Eldritch Moon Promos,2016-07-22
+358,2,PEVE,Eventide Promos,2008-07-25
+359,1,PEXO,Exodus Promos,1998-06-15
+360,6,PF19,MagicFest 2019,2019-01-01
+361,6,PF20,MagicFest 2020,2020-01-01
+362,1,PF21,MagicFest 2021,2021-01-01
+363,42,PFRF,Fate Reforged Promos,2015-01-23
+364,2,PFUT,Future Sight Promos,2007-05-04
+365,9,PG07,Gateway 2007,2007-01-01
+366,8,PG08,Gateway 2008,2008-01-01
+367,2,PGPT,Guildpact Promos,2006-02-03
+368,20,PGPX,Grand Prix Promos,2007-02-24
+369,83,PGRN,Guilds of Ravnica Promos,2018-10-05
+370,5,PGRU,Guru,1999-07-12
+371,9,PGTC,Gatecrash Promos,2013-01-26
+372,3,PGTW,Gateway 2006,2006-01-01
+373,82,PHED,"Heads I Win, Tails You Lose",2022-04-22
+374,6,PHEL,Open the Helvault,2012-04-28
+375,5,PHJ,Hobby Japan Promos,2002-07-01
+376,6,PHOP,Promotional Planes,2009-09-04
+377,62,PHOU,Hour of Devastation Promos,2017-07-14
+378,5,PHPR,HarperPrism Book Promos,1994-09-01
+379,60,PHUK,Hachette UK,2006-01-01
+380,5,PI13,IDW Comics 2013,2013-01-01
+381,3,PI14,IDW Comics 2014,2014-01-01
+382,9,PIDW,IDW Comics 2012,2012-01-01
+383,136,PIKO,Ikoria: Lair of Behemoths Promos,2020-04-24
+384,1,PINV,Invasion Promos,2000-10-02
+385,5,PISD,Innistrad Promos,2011-09-24
+386,10,PJ21,Judge Gift Cards 2021,2021-01-01
+387,6,PJAS,Junior APAC Series,2006-01-01
+388,12,PJJT,Japan Junior Tournament,2003-01-01
+389,10,PJOU,Journey into Nyx Promos,2014-04-26
+390,8,PJSE,Junior Series Europe,2005-01-01
+391,1,PJUD,Judgment Promos,2002-05-27
+392,1,PKHM,Kaldheim Promos,2021-02-05
+393,82,PKLD,Kaladesh Promos,2016-09-30
+394,56,PKTK,Khans of Tarkir Promos,2014-09-26
+395,4,PL21,Year of the Ox 2021,2021-01-25
+396,5,PL22,Year of the Tiger 2022,2022-02-25
+397,165,PLC,Planar Chaos,2007-02-02
+398,1,PLG20,Love Your LGS 2020,2020-05-18
+399,5,PLG21,Love Your LGS 2021,2021-06-22
+400,2,PLGM,DCI Legend Membership,1995-01-01
+401,1,PLGN,Legions Promos,2003-02-03
+402,210,PLIST,The List,2020-09-26
+403,1,PLNY,Lunar New Year 2018,2018-02-16
+404,2,PLRW,Lorwyn Promos,2007-10-12
+405,143,PLS,Planeshift,2001-02-05
+406,5,PM10,Magic 2010 Promos,2009-07-16
+407,5,PM11,Magic 2011 Promos,2010-07-15
+408,5,PM12,Magic 2012 Promos,2011-07-14
+409,5,PM13,Magic 2013 Promos,2012-07-12
+410,5,PM14,Magic 2014 Promos,2013-07-18
+411,13,PM15,Magic 2015 Promos,2014-07-17
+412,94,PM19,Core Set 2019 Promos,2018-07-13
+413,143,PM20,Core Set 2020 Promos,2019-07-12
+414,136,PM21,Core Set 2021 Promos,2020-07-03
+415,6,PMBS,Mirrodin Besieged Promos,2011-02-03
+416,41,PMEI,Media Inserts,1995-01-01
+417,2,PMH1,Modern Horizons Promos,2019-06-14
+418,80,PMH2,Modern Horizons 2 Promos,2021-06-18
+419,1,PMIC,MicroProse Promos,1997-04-01
+420,168,PMID,Innistrad: Midnight Hunt Promos,2021-09-24
+421,1,PMMQ,Mercadian Masques Promos,1999-10-04
+422,85,PMOA,Magic Online Avatars,2003-01-01
+423,2,PMOR,Morningtide Promos,2008-02-01
+424,20,PMPS,Magic Premiere Shop 2005,2005-01-01
+425,5,PMPS06,Magic Premiere Shop 2006,2006-01-01
+426,5,PMPS07,Magic Premiere Shop 2007,2007-01-01
+427,5,PMPS08,Magic Premiere Shop 2008,2008-01-01
+428,5,PMPS09,Magic Premiere Shop 2009,2009-01-01
+429,5,PMPS10,Magic Premiere Shop 2010,2010-01-01
+430,5,PMPS11,Magic Premiere Shop 2011,2011-01-01
+431,1,PMRD,Mirrodin Promos,2004-06-04
+432,1,PNAT,Nationals Promos,2018-01-25
+433,1,PNEM,Nemesis Promos,2000-02-14
+434,154,PNEO,Kamigawa: Neon Dynasty Promos,2022-02-18
+435,6,PNPH,New Phyrexia Promos,2011-05-12
+436,1,PODY,Odyssey Promos,2001-10-01
+437,65,POGW,Oath of the Gatewatch Promos,2016-01-22
+438,1,PONS,Onslaught Promos,2003-02-03
+439,243,POR,Portal,1997-05-01
+440,53,PORI,Magic Origins Promos,2015-07-17
+441,2,PPC1,M15 Prerelease Challenge,2014-07-12
+442,1,PPCY,Prophecy Promos,2000-06-05
+443,2,PPLC,Planar Chaos Promos,2007-02-02
+444,1,PPLS,Planeshift Promos,2001-02-05
+445,6,PPOD,Portal Demo Game,1997-05-01
+446,5,PPP1,M20 Promo Packs,2019-07-12
+447,28,PPRO,Pro Tour Promos,2007-02-09
+448,2,PPTK,Portal: Three Kingdoms Promos,1999-07-01
+449,6,PR2,Magic Player Rewards 2002,2002-01-01
+450,2,PRAV,Ravnica: City of Guilds Promos,2005-10-07
+451,1,PRED,Redemption Program,1996-10-01
+452,34,PRES,Resale Promos,2007-01-01
+453,97,PRIX,Rivals of Ixalan Promos,2018-01-19
+454,2274,PRM,Magic Online Promos,2002-06-24
+455,80,PRNA,Ravnica Allegiance Promos,2019-01-25
+456,6,PROE,Rise of the Eldrazi Promos,2010-04-23
+457,10,PRTR,Return to Ravnica Promos,2012-10-05
+458,10,PRW2,RNA Ravnica Weekend,2019-02-16
+459,10,PRWK,GRN Ravnica Weekend,2018-11-09
+460,224,PS11,Salvat 2011,2011-01-01
+461,269,PS14,San Diego Comic-Con 2014,2014-07-08
+462,5,PS15,San Diego Comic-Con 2015,2015-07-09
+463,5,PS16,San Diego Comic-Con 2016,2016-10-01
+464,6,PS17,San Diego Comic-Con 2017,2017-07-20
+465,5,PS18,San Diego Comic-Con 2018,2018-07-19
+466,5,PS19,San Diego Comic-Con 2019,2019-07-18
+467,720,PSAL,Salvat 2005,2005-08-22
+468,1,PSCG,Scourge Promos,2003-05-26
+469,5,PSDC,San Diego Comic-Con 2013,2013-07-18
+470,10,PSDG,Sega Dreamcast Cards,2001-06-28
+471,2,PSHM,Shadowmoor Promos,2008-05-02
+472,89,PSOI,Shadows over Innistrad Promos,2016-04-08
+473,2,PSOK,Saviors of Kamigawa Promos,2005-06-03
+474,5,PSOM,Scars of Mirrodin Promos,2010-09-30
+475,5,PSS1,BFZ Standard Series,2015-10-02
+476,5,PSS2,XLN Standard Showdown,2017-09-29
+477,5,PSS3,M19 Standard Showdown,2018-07-13
+478,1,PSTH,Stronghold Promos,1998-03-02
+479,180,PSTX,Strixhaven: School of Mages Promos,2021-04-23
+480,383,PSUM,Summer of Magic,2007-07-21
+481,350,PSUS,Junior Super Series,1999-12-01
+482,308,PTC,Pro Tour Collector Set,1996-05-01
+483,3,PTG,Ponies: The Galloping,2019-10-22
+484,136,PTHB,Theros Beyond Death Promos,2020-01-24
+485,10,PTHS,Theros Promos,2013-09-21
+486,180,PTK,Portal Three Kingdoms,1999-07-06
+487,4,PTKDF,Tarkir Dragonfury,2015-04-03
+488,1,PTMP,Tempest Promos,1997-10-14
+489,1,PTOR,Torment Promos,2002-02-04
+490,2,PTSP,Time Spiral Promos,2006-10-06
+491,1,PUDS,Urza's Destiny Promos,1999-06-07
+492,1,PULG,Urza's Legacy Promos,1999-02-15
+493,40,PUMA,Ultimate Box Topper,2018-12-07
+494,1,PUNH,Unhinged Promos,2004-11-19
+495,9,PURL,URL/Convention Promos,2009-02-08
+496,1,PUSG,Urza's Saga Promos,1998-10-12
+497,1,PUST,Unstable Promos,2017-12-08
+498,32,PVAN,Vanguard Series,1997-05-01
+499,109,PVOW,Innistrad: Crimson Vow Promos,2021-11-19
+500,8,PW09,Wizards Play Network 2009,2009-01-01
+501,10,PW10,Wizards Play Network 2010,2010-01-01
+502,14,PW11,Wizards Play Network 2011,2011-01-01
+503,3,PW12,Wizards Play Network 2012,2012-01-01
+504,6,PW21,Wizards Play Network 2021,2021-06-18
+505,4,PW22,Wizards Play Network 2022,2022-03-05
+506,175,PWAR,War of the Spark Promos,2019-05-03
+507,5,PWCQ,World Magic Cup Qualifiers,2013-04-06
+508,350,PWOR,World Championship Promos,1999-08-04
+509,1,PWOS,Wizards of the Coast Online Store,1999-09-04
+510,2,PWPN,Wizards Play Network 2008,2008-10-01
+511,6,PWWK,Worldwake Promos,2010-02-05
+512,120,PXLN,Ixalan Promos,2017-09-29
+513,10,PXTC,XLN Treasure Chest,2017-11-24
+514,149,PZ1,Legendary Cube Prize Pack,2015-11-18
+515,73,PZ2,Treasure Chest,2016-11-16
+516,5,PZEN,Zendikar Promos,2009-10-02
+517,168,PZNR,Zendikar Rising Promos,2020-09-25
+518,10,Q06,Pioneer Challenger Decks 2021,2021-10-15
+519,306,RAV,Ravnica: City of Guilds,2005-10-07
+520,122,REN,Renaissance,1995-08-01
+521,69,RIN,Rinascimento,1995-08-01
+522,196,RIX,Rivals of Ixalan,2018-01-19
+523,259,RNA,Ravnica Allegiance,2019-01-25
+524,248,ROE,Rise of the Eldrazi,2010-04-23
+525,65,RQS,Rivals Quick Start Set,1996-07-01
+526,274,RTR,Return to Ravnica,2012-10-05
+527,20,S00,Starter 2000,2000-04-01
+528,173,S99,Starter 1999,1999-07-01
+529,143,SCG,Scourge,2003-05-26
+530,301,SHM,Shadowmoor,2008-05-02
+531,0,SKHM,Kaldheim Substitute Cards,2021-02-05
+532,1,SLD,Secret Lair Drop,2019-12-02
+533,1,SLU,Secret Lair: Ultimate Edition,2020-05-29
+534,10,SLX,Universes Within,2022-03-03
+535,0,SMID,Innistrad: Midnight Hunt Substitute Cards,2021-09-24
+536,290,SNC,Streets of New Capenna,2022-04-29
+537,297,SOI,Shadows over Innistrad,2016-04-08
+538,165,SOK,Saviors of Kamigawa,2005-06-03
+539,249,SOM,Scars of Mirrodin,2010-10-01
+540,8,SS1,Signature Spellbook: Jace,2018-06-15
+541,8,SS2,Signature Spellbook: Gideon,2019-06-28
+542,8,SS3,Signature Spellbook: Chandra,2020-06-26
+543,0,SSTX,Strixhaven: School of Mages Substitute Cards,2021-04-23
+544,63,STA,Strixhaven Mystical Archive,2021-04-23
+545,143,STH,Stronghold,1998-03-02
+546,275,STX,Strixhaven: School of Mages,2021-04-23
+547,306,SUM,Summer Magic / Edgar,1994-06-21
+548,0,SVOW,Innistrad: Crimson Vow Substitute Cards,2021-11-19
+549,0,SZNR,Zendikar Rising Substitute Cards,2020-09-25
+550,15,TBTH,Battle the Horde,2014-03-01
+551,197,TD0,Magic Online Theme Decks,2010-11-08
+552,88,TD2,Duel Decks: Mirrodin Pure vs. New Phyrexia,2011-05-14
+553,15,TDAG,Defeat a God,2014-05-25
+554,15,TFTH,Face the Hydra,2013-10-19
+555,254,THB,Theros Beyond Death,2020-01-24
+556,7,THP1,Theros Hero's Path,2013-09-27
+557,7,THP2,Born of the Gods Hero's Path,2014-02-07
+558,8,THP3,Journey into Nyx Hero's Path,2014-05-02
+559,249,THS,Theros,2013-09-27
+560,350,TMP,Tempest,1997-10-14
+561,143,TOR,Torment,2002-02-04
+562,269,TPR,Tempest Remastered,2015-05-06
+563,121,TSB,Time Spiral Timeshifted,2006-10-06
+564,301,TSP,Time Spiral,2006-10-06
+565,289,TSR,Time Spiral Remastered,2021-03-19
+566,143,UDS,Urza's Destiny,1999-06-07
+567,185,UGIN,Ugin's Fate,2015-01-17
+568,94,UGL,Unglued,1998-08-11
+569,143,ULG,Urza's Legacy,1999-02-15
+570,254,UMA,Ultimate Masters,2018-12-07
+571,96,UND,Unsanctioned,2020-02-29
+572,269,UNF,Unfinity,2022-12-31
+573,140,UNH,Unhinged,2004-11-19
+574,350,USG,Urza's Saga,1998-10-12
+575,216,UST,Unstable,2017-12-08
+576,15,V09,From the Vault: Exiled,2009-08-28
+577,15,V10,From the Vault: Relics,2010-08-27
+578,15,V11,From the Vault: Legends,2011-08-26
+579,15,V12,From the Vault: Realms,2012-08-31
+580,20,V13,From the Vault: Twenty,2013-08-23
+581,15,V14,From the Vault: Annihilation,2014-08-22
+582,15,V15,From the Vault: Angels,2015-08-21
+583,16,V16,From the Vault: Lore,2016-08-19
+584,15,V17,From the Vault: Transform,2017-11-24
+585,167,VIS,Visions,1997-02-03
+586,325,VMA,Vintage Masters,2014-06-16
+587,38,VOC,Crimson Vow Commander,2021-11-19
+588,277,VOW,Innistrad: Crimson Vow,2021-11-19
+589,16,W16,Welcome Deck 2016,2016-04-08
+590,30,W17,Welcome Deck 2017,2017-04-15
+591,264,WAR,War of the Spark,2019-05-03
+592,117,WC00,World Championship Decks 2000,2000-08-02
+593,138,WC01,World Championship Decks 2001,2001-08-08
+594,153,WC02,World Championship Decks 2002,2002-08-14
+595,142,WC03,World Championship Decks 2003,2003-08-06
+596,103,WC04,World Championship Decks 2004,2004-09-01
+597,131,WC97,World Championship Decks 1997,1997-08-13
+598,117,WC98,World Championship Decks 1998,1998-08-12
+599,111,WC99,World Championship Decks 1999,1999-08-04
+600,167,WTH,Weatherlight,1997-06-09
+601,145,WWK,Worldwake,2010-02-05
+602,30,XANA,Arena New Player Experience Extras,2018-07-14
+603,279,XLN,Ixalan,2017-09-29
+604,64,Y22,Alchemy: Innistrad,2021-12-09
+605,249,ZEN,Zendikar,2009-10-02
+606,1,ZNC,Zendikar Rising Commander,2020-09-25
+607,30,ZNE,Zendikar Rising Expeditions,2020-09-25
+608,280,ZNR,Zendikar Rising,2020-09-25
