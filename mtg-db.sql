@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 18, 2022 at 02:56 AM
+-- Generation Time: Mar 18, 2022 at 03:03 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -1653,6 +1653,16 @@ CREATE TABLE `packs` (
   `val_d` int(11) DEFAULT NULL,
   `p_type` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Triggers `packs`
+--
+DELIMITER $$
+CREATE TRIGGER `UpdateNetWorth` AFTER INSERT ON `packs` FOR EACH ROW UPDATE users
+SET networth = networth + new.val_d
+WHERE u_id = new.u_id
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
