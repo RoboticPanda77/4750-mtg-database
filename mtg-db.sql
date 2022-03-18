@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 18, 2022 at 03:03 AM
+-- Generation Time: Mar 18, 2022 at 03:29 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -1625,7 +1625,8 @@ CREATE TABLE `is_from` (
 CREATE TABLE `owns_card` (
   `u_id` int(11) NOT NULL,
   `cn` int(11) NOT NULL,
-  `count` int(11) NOT NULL
+  `count` int(11) NOT NULL,
+  `s_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -1653,16 +1654,6 @@ CREATE TABLE `packs` (
   `val_d` int(11) DEFAULT NULL,
   `p_type` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Triggers `packs`
---
-DELIMITER $$
-CREATE TRIGGER `UpdateNetWorth` AFTER INSERT ON `packs` FOR EACH ROW UPDATE users
-SET networth = networth + new.val_d
-WHERE u_id = new.u_id
-$$
-DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -2326,8 +2317,7 @@ CREATE TABLE `users` (
 
 CREATE TABLE `wishlist` (
   `u_id` int(11) NOT NULL,
-  `val_d` int(11) DEFAULT NULL,
-  `last_updated` date DEFAULT NULL
+  `val_d` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -2379,7 +2369,8 @@ ALTER TABLE `is_from`
 -- Indexes for table `owns_card`
 --
 ALTER TABLE `owns_card`
-  ADD PRIMARY KEY (`u_id`,`cn`),
+  ADD PRIMARY KEY (`u_id`,`cn`,`s_id`),
+  ADD KEY `s_id` (`s_id`),
   ADD KEY `cn` (`cn`);
 
 --
@@ -2459,7 +2450,8 @@ ALTER TABLE `is_from`
 --
 ALTER TABLE `owns_card`
   ADD CONSTRAINT `owns_card_ibfk_1` FOREIGN KEY (`u_id`) REFERENCES `users` (`u_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `owns_card_ibfk_2` FOREIGN KEY (`cn`) REFERENCES `cards` (`cn`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `owns_card_ibfk_2` FOREIGN KEY (`s_id`) REFERENCES `cards` (`setCode`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `owns_card_ibfk_3` FOREIGN KEY (`cn`) REFERENCES `cards` (`cn`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `owns_pack`
