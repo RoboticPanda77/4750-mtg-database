@@ -21,6 +21,16 @@ SET time_zone = "+00:00";
 -- Database: `4750-mtg-database`
 --
 
+DELIMITER $$
+--
+-- Procedures
+--
+CREATE DEFINER=`root`@`localhost` PROCEDURE `orderByColumn` (IN `column_name` VARCHAR(30), IN `user_id` INT)  SELECT * FROM cards NATURAL JOIN owns_card
+    WHERE u_id = user_id
+    ORDER BY column_name$$
+
+DELIMITER ;
+
 -- --------------------------------------------------------
 
 --
@@ -1730,6 +1740,15 @@ CREATE TABLE `packs` (
   `val_d` int(11) DEFAULT NULL,
   `p_type` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Triggers `packs`
+--
+DELIMITER $$
+CREATE TRIGGER `UpdateNetWorth` AFTER INSERT ON `packs` FOR EACH ROW UPDATE users
+SET networth = networth + new.val_d
+WHERE u_id = new.u_id
+$$
+DELIMITER ;
 
 --
 -- Dumping data for table `packs`
