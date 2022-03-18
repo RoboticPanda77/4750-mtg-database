@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 18, 2022 at 02:15 AM
+-- Generation Time: Mar 18, 2022 at 02:56 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -923,7 +923,8 @@ INSERT INTO `cards` (`cn`, `artist`, `cardindex`, `colors`, `convertedManaCost`,
 
 CREATE TABLE `card_on_wishlist` (
   `u_id` int(11) NOT NULL,
-  `cn` int(11) NOT NULL
+  `cn` int(11) NOT NULL,
+  `s_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -2333,13 +2334,16 @@ ALTER TABLE `artists`
 -- Indexes for table `cards`
 --
 ALTER TABLE `cards`
-  ADD PRIMARY KEY (`cn`,`setCode`);
+  ADD PRIMARY KEY (`cn`,`setCode`),
+  ADD KEY `setCode` (`setCode`);
 
 --
 -- Indexes for table `card_on_wishlist`
 --
 ALTER TABLE `card_on_wishlist`
-  ADD PRIMARY KEY (`u_id`,`cn`);
+  ADD PRIMARY KEY (`u_id`,`cn`,`s_id`),
+  ADD KEY `cn` (`cn`),
+  ADD KEY `s_id` (`s_id`);
 
 --
 -- Indexes for table `drawn_by`
@@ -2358,19 +2362,22 @@ ALTER TABLE `friends_with`
 -- Indexes for table `is_from`
 --
 ALTER TABLE `is_from`
-  ADD PRIMARY KEY (`u_id`,`p_num`,`s_id`);
+  ADD PRIMARY KEY (`u_id`,`p_num`,`s_id`),
+  ADD KEY `s_id` (`s_id`);
 
 --
 -- Indexes for table `owns_card`
 --
 ALTER TABLE `owns_card`
-  ADD PRIMARY KEY (`u_id`,`cn`);
+  ADD PRIMARY KEY (`u_id`,`cn`),
+  ADD KEY `cn` (`cn`);
 
 --
 -- Indexes for table `owns_pack`
 --
 ALTER TABLE `owns_pack`
-  ADD PRIMARY KEY (`u_id`,`p_num`,`s_id`);
+  ADD PRIMARY KEY (`u_id`,`p_num`,`s_id`),
+  ADD KEY `s_id` (`s_id`);
 
 --
 -- Indexes for table `packs`
@@ -2383,7 +2390,9 @@ ALTER TABLE `packs`
 -- Indexes for table `pack_contains`
 --
 ALTER TABLE `pack_contains`
-  ADD PRIMARY KEY (`u_id`,`p_num`,`cn`,`s_id`);
+  ADD PRIMARY KEY (`u_id`,`p_num`,`cn`,`s_id`),
+  ADD KEY `s_id` (`s_id`),
+  ADD KEY `cn` (`cn`);
 
 --
 -- Indexes for table `sets`
@@ -2408,6 +2417,20 @@ ALTER TABLE `wishlist`
 --
 
 --
+-- Constraints for table `cards`
+--
+ALTER TABLE `cards`
+  ADD CONSTRAINT `cards_ibfk_1` FOREIGN KEY (`setCode`) REFERENCES `sets` (`s_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `card_on_wishlist`
+--
+ALTER TABLE `card_on_wishlist`
+  ADD CONSTRAINT `card_on_wishlist_ibfk_1` FOREIGN KEY (`cn`) REFERENCES `cards` (`cn`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `card_on_wishlist_ibfk_2` FOREIGN KEY (`u_id`) REFERENCES `users` (`u_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `card_on_wishlist_ibfk_3` FOREIGN KEY (`s_id`) REFERENCES `cards` (`setCode`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Constraints for table `drawn_by`
 --
 ALTER TABLE `drawn_by`
@@ -2415,11 +2438,46 @@ ALTER TABLE `drawn_by`
   ADD CONSTRAINT `FK_CARD` FOREIGN KEY (`cn`,`setCode`) REFERENCES `cards` (`cn`, `setCode`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
+-- Constraints for table `is_from`
+--
+ALTER TABLE `is_from`
+  ADD CONSTRAINT `is_from_ibfk_1` FOREIGN KEY (`u_id`) REFERENCES `packs` (`u_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `is_from_ibfk_2` FOREIGN KEY (`s_id`) REFERENCES `sets` (`s_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `owns_card`
+--
+ALTER TABLE `owns_card`
+  ADD CONSTRAINT `owns_card_ibfk_1` FOREIGN KEY (`u_id`) REFERENCES `users` (`u_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `owns_card_ibfk_2` FOREIGN KEY (`cn`) REFERENCES `cards` (`cn`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `owns_pack`
+--
+ALTER TABLE `owns_pack`
+  ADD CONSTRAINT `owns_pack_ibfk_1` FOREIGN KEY (`u_id`) REFERENCES `users` (`u_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `owns_pack_ibfk_2` FOREIGN KEY (`s_id`) REFERENCES `packs` (`s_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Constraints for table `packs`
 --
 ALTER TABLE `packs`
   ADD CONSTRAINT `FK_SET` FOREIGN KEY (`s_id`) REFERENCES `sets` (`s_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `FK_USER` FOREIGN KEY (`u_id`) REFERENCES `users` (`u_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `pack_contains`
+--
+ALTER TABLE `pack_contains`
+  ADD CONSTRAINT `pack_contains_ibfk_1` FOREIGN KEY (`u_id`) REFERENCES `packs` (`u_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `pack_contains_ibfk_2` FOREIGN KEY (`s_id`) REFERENCES `packs` (`s_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `pack_contains_ibfk_3` FOREIGN KEY (`cn`) REFERENCES `cards` (`cn`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `wishlist`
+--
+ALTER TABLE `wishlist`
+  ADD CONSTRAINT `wishlist_ibfk_1` FOREIGN KEY (`u_id`) REFERENCES `users` (`u_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
