@@ -29,10 +29,14 @@ class ProjectController
     }
     public function howtoDoFunc() {
 
+        $data = $this->db->query("select * from users where username = ?;", "s","hello");
+        
         include("templates/header.php");
         include("templates/demonstration.php");
+        //print_r($data); <-- useful print function for arrays
         include("templates/footer.php");
     }
+
     public function run()
     {
         switch ($this->command) {
