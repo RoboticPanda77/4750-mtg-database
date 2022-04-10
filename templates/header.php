@@ -51,6 +51,16 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
+        <!-- See below for how you should be handling HTML links to pass to the controller -->
+        <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+            <li class="nav-item">
+                <a class="nav-link active" href="?command=welcome">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="?command=howtoDoFunc">Demonstration</a>
+            </li>
+        </ul>
     </nav>
 </body>
 

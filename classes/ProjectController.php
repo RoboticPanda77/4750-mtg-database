@@ -22,13 +22,23 @@ class ProjectController
     }
 
     public function welcome() {
+
         include("templates/header.php");
         include("templates/welcome.php");
+        include("templates/footer.php");
+    }
+    public function howtoDoFunc() {
+
+        include("templates/header.php");
+        include("templates/demonstration.php");
         include("templates/footer.php");
     }
     public function run()
     {
         switch ($this->command) {
+            case "howtoDoFunc":
+                $this->howtoDoFunc();
+                break;
             default:
                 $this->welcome();
         }

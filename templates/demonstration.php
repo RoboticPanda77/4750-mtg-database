@@ -24,7 +24,7 @@
     <div class="row">
       <div class="col-md-12">
         <div class="homepagebody" style="color:white">
-          <h4 class="text-center">Welcome to the MTG Card Collector!</h4>
+          <h4 class="text-center">Welcome to the MTG Card Collector  but THIS IS A DEMONSTRATION PAGE!</h4>
           <p class="text-center">This application will allow you to add cards to your collection!</p>
         </div>
       </div>
