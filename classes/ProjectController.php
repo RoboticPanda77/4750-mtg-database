@@ -23,6 +23,8 @@ class ProjectController
 
     public function welcome() {
         include("templates/header.php");
+        include("templates/welcome.php");
+        include("templates/footer.php");
     }
     public function run()
     {

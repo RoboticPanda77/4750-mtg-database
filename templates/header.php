@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -14,7 +17,7 @@
     -->
 
     <meta name="author" content="kmm9sz">
-    <meta name="description" content="Welcome page for Wordle">
+    <meta name="description" content="Welcome page for MTG-DB">
 
     <title>Welcome</title>
 
@@ -38,6 +41,7 @@
 
     <!-- include your CSS -->
     <!-- <link rel="stylesheet" href="custom.css" />  -->
+    <link rel="stylesheet/less" type="text/css" href="styles/styles.less" />
 
 </head>
 
@@ -49,3 +53,10 @@
         </button>
     </nav>
 </body>
+
+
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/less@4"></script>
+
+</html>
