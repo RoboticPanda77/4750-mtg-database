@@ -28,8 +28,12 @@ class ProjectController
         include("templates/footer.php");
     }
     public function howtoDoFunc() {
-
-        $data = $this->db->query("select * from users where username = ?;", "s","hello");
+        /*First variable is SQL query itself, ? marks variable input. Second parameter
+        is always the data type in order from left to right in string format, so "si" is first ? 
+        is string data type, second ? integer data type. Then, further parameters are the data
+        to take the place of question marks. Thus the final query is "select * from users where
+        username = "hello" AND u_id = 5;". Data is returned in an array.*/
+        $data = $this->db->query("select * from users where username = ? AND u_id = ?;", "si","hello", 5);
         
         include("templates/header.php");
         include("templates/demonstration.php");
