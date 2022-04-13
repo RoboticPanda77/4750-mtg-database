@@ -82,9 +82,27 @@
               <input class="btn btn-success" type="submit" name="addCardAction" value="Add Card" required style="width:1000px;margin-left:auto;margin-right:auto"/>
             </div>
           </form>
+          <form name="deleteCard" method="post">
+            <div class="row mb-3 mx-3">
+              <p class="font-weight-bold" style="font-weight:bold;color:orange;font-size:30px">Enter User ID:</p>
+              <input type="text" class="form-control" name="userID3" required style="width:1000px;margin-left:auto;margin-right:auto"/>
+              <p></p>
+              <p class="font-weight-bold" style="font-weight:bold;color:orange;font-size:30px">Remove a Card from your Wishlist:</p>
+              <p class="font-weight-bold" style="font-weight:bold;color:orange;font-size:15px;margin-left:225px">Enter Card Number:</p>
+              <input type="number" class="form-control" name="cardNumber2" required style="width:1000px;margin-left:auto;margin-right:auto"/>
+              <p></p>
+              <p class="font-weight-bold" style="font-weight:bold;color:orange;font-size:15px;margin-left:225px">Enter Set Number:</p>
+              <input type="number" class="form-control" name="setNumber2" required style="width:1000px;margin-left:auto;margin-right:auto"/>
+              <p></p>
+              <input class="btn btn-danger" type="submit" name="removeCardAction" value="Remove Card" required style="width:1000px;margin-left:auto;margin-right:auto"/>
+            </div>
+          </form>
           <?php
             if (isset($_POST["userID2"])){
               $this->db->query("insert into card_on_wishlist values(" . $_POST["userID2"] . ", " . $_POST["cardNumber"] . ", " . $_POST["setNumber"] . ")");
+            }
+            if (isset($_POST["userID3"])){
+              $this->db->query("delete from card_on_wishlist where u_id=" . $_POST["userID3"] . " and cn=" . $_POST["cardNumber2"] . " and s_id=" . $_POST["setNumber2"] . ";");
             }
             if(isset($_POST["userID"]))
             {
@@ -113,7 +131,9 @@
               }
               $leng = count($data);
               if ($leng==0){
-                  echo "Add some cards to your wishlist!";
+                  echo "<html>";
+                  echo "<p style='color:orange;margin-left:525px;font-size:30px;font-weight:bold'>Add some cards to your wishlist!<p>";
+                  echo "</html>";
               }
               else{
                   $notPrint = array('name', 'rarity');
