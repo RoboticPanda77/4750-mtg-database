@@ -1,6 +1,6 @@
 <?php
 
-$list_of_packs = $data;
+$cards_in_pack = $data;
 
 ?>
 
@@ -25,26 +25,19 @@ $list_of_packs = $data;
 </head>
 
 <body class="large-screen-container" style="background-color: #4a524d">
-  <div style="color:white" class="h1"><?php echo Config::$db["user"]?>'s Packs</div>
+  
   <table class="w3-table w3-bordered w3-card-4" style="width:90%">
   <thead>
   <tr style="background-color:#B0B0B0">
-    <th width="20%">Pack Number</th>        
-    <th width="20%">Set Name</th>        
-    <th width="20%">Type</th>         
-    <th width="20%">Value</th> 
-    <th width="20%">View</th>
+    <th>Card</th>        
+    <th>Value</th>
+    <th></th>
   </tr>
   </thead>
-  <?php foreach ($list_of_packs as $pack): 
-    $val = $pack['p_num'];
-  ?>
+  <?php foreach ($cards_in_pack as $card): ?>
   <tr style="color:white">
-    <td><?php echo $pack['p_num']; ?></td>
-    <td><?php echo $pack['name']; ?></td>
-    <td><?php echo $pack['p_type']; ?></td> 
-    <td><?php echo $pack['val_d']; ?></td> 
-    <td><a href="?command=pack&packnum= <?php echo $val ?>">View pack</td>
+    <td><?php echo $card['name']; ?></td>
+    <td><?php echo $card['price']; ?></td>
   </tr>
   <?php endforeach; ?>
 
