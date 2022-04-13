@@ -1,24 +1,6 @@
 <?php
 
-global $db;
-
-function getAllPacks()
-{
-  
-	$query = "select * from packs where u_id.username = :db";
-
-	$statement = $db->prepare($query);
-  $statement->bindValue(':db', $db["user"]);
-	$statement->execute();
-
-	$results = $statement->fetchAll();   
-
-	$statement->closeCursor();
-
-	return $results;
-}
-
-$list_of_packs = getAllPacks();
+$list_of_packs = $data;
 
 ?>
 
@@ -48,15 +30,15 @@ $list_of_packs = getAllPacks();
   <thead>
   <tr style="background-color:#B0B0B0">
     <th width="25%">Pack Number</th>        
-    <th width="25%">Set ID</th>        
+    <th width="25%">Set Name</th>        
     <th width="25%">Type</th>         
     <th width="25%">Value</th> 
   </tr>
   </thead>
   <?php foreach ($list_of_packs as $pack): ?>
-  <tr>
+  <tr style="color:white">
     <td><?php echo $pack['p_num']; ?></td>
-    <td><?php echo $pack['s_id']; ?></td>
+    <td><?php echo $pack['name']; ?></td>
     <td><?php echo $pack['p_type']; ?></td> 
     <td><?php echo $pack['val_d']; ?></td> 
   </tr>

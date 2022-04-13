@@ -41,8 +41,7 @@ class ProjectController
         include("templates/footer.php");
     }
     public function packs() {
-        $data = $this->db->query("select * from users where username = ? AND u_id = ?;", "si","hello", 5);
-        
+        $data = $this->db->query("select * from packs natural join sets where u_id = ?;", "i", 1);
         include("templates/header.php");
         include("templates/packs-view.php");
         //print_r($data); <-- useful print function for arrays
