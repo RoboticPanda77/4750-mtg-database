@@ -60,6 +60,9 @@
             <li class="nav-item">
                 <a class="nav-link active" href="?command=howtoDoFunc">Demonstration</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="?command=packs">Your Packs</a>
+            </li>
         </ul>
     </nav>
 </body>

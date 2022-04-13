@@ -40,12 +40,23 @@ class ProjectController
         //print_r($data); <-- useful print function for arrays
         include("templates/footer.php");
     }
+    public function packs() {
+        $data = $this->db->query("select * from users where username = ? AND u_id = ?;", "si","hello", 5);
+        
+        include("templates/header.php");
+        include("templates/packs-view.php");
+        //print_r($data); <-- useful print function for arrays
+        include("templates/footer.php");
+    }
 
     public function run()
     {
         switch ($this->command) {
             case "howtoDoFunc":
                 $this->howtoDoFunc();
+                break;
+            case "packs":
+                $this->packs();
                 break;
             default:
                 $this->welcome();
