@@ -25,11 +25,9 @@
     <div class="row">
       <div class="col-md-12">
         <div class="homepagebody" style="color:white">
-          <h4 class="text-center">Welcome to your MTG Wishlist <?php echo get_current_user() ?></h4>
+          <h4 class="text-center">Welcome to your MTG Wishlist <?php echo $_SESSION["username"]; ?></h4>
           <form name="viewCards" method="post">
 		        <div class="row mb-3 mx-3">
-			        <p class="font-weight-bold" style="font-weight:bold;color:orange;font-size:30px">Please Enter your User ID:</p>
-				        <input type="text" class="form-control" name="userID" required style="width:1000px;margin-left:auto;margin-right:auto"/>
                 <p class="font-weight-bold" style="font-weight:bold;color:orange;font-size:30px">Optional Filters:</p>
                 <p class="font-weight-bold" style="font-weight:bold;color:orange;font-size:15px;margin-left:225px">Set Rarity:</p>
                 <select name="rarities" style="width:1000px;margin-left:auto;margin-right:auto">
@@ -64,14 +62,11 @@
                   </tr>
                 </table>
                 <p></p>
-				        <input class="btn btn-danger" type="submit" name="loginAction" value="View Wishlist" required style="width:1000px;margin-left:auto;margin-right:auto"/>
+				        <input class="btn btn-info" type="submit" name="viewAction" value="View Wishlist" required style="width:1000px;margin-left:auto;margin-right:auto"/>
 		        </div>
 	        </form>
           <form name="addCard" method="post">
             <div class="row mb-3 mx-3">
-              <p class="font-weight-bold" style="font-weight:bold;color:orange;font-size:30px">Enter User ID:</p>
-              <input type="text" class="form-control" name="userID2" required style="width:1000px;margin-left:auto;margin-right:auto"/>
-              <p></p>
               <p class="font-weight-bold" style="font-weight:bold;color:orange;font-size:30px">Add a Card to your Wishlist:</p>
               <p class="font-weight-bold" style="font-weight:bold;color:orange;font-size:15px;margin-left:225px">Enter Card Number:</p>
               <input type="number" class="form-control" name="cardNumber" required style="width:1000px;margin-left:auto;margin-right:auto"/>
@@ -84,9 +79,6 @@
           </form>
           <form name="deleteCard" method="post">
             <div class="row mb-3 mx-3">
-              <p class="font-weight-bold" style="font-weight:bold;color:orange;font-size:30px">Enter User ID:</p>
-              <input type="text" class="form-control" name="userID3" required style="width:1000px;margin-left:auto;margin-right:auto"/>
-              <p></p>
               <p class="font-weight-bold" style="font-weight:bold;color:orange;font-size:30px">Remove a Card from your Wishlist:</p>
               <p class="font-weight-bold" style="font-weight:bold;color:orange;font-size:15px;margin-left:225px">Enter Card Number:</p>
               <input type="number" class="form-control" name="cardNumber2" required style="width:1000px;margin-left:auto;margin-right:auto"/>
@@ -98,13 +90,13 @@
             </div>
           </form>
           <?php
-            if (isset($_POST["userID2"])){
-              $this->db->query("insert into card_on_wishlist values(" . $_POST["userID2"] . ", " . $_POST["cardNumber"] . ", " . $_POST["setNumber"] . ")");
+            if (isset($_POST["addCardAction"])){
+              $this->db->query("insert into card_on_wishlist values(" . $_SESSION["id"] . ", " . $_POST["cardNumber"] . ", " . $_POST["setNumber"] . ")");
             }
-            if (isset($_POST["userID3"])){
-              $this->db->query("delete from card_on_wishlist where u_id=" . $_POST["userID3"] . " and cn=" . $_POST["cardNumber2"] . " and s_id=" . $_POST["setNumber2"] . ";");
+            if (isset($_POST["removeCardAction"])){
+              $this->db->query("delete from card_on_wishlist where u_id=" . $_SESSION["id"] . " and cn=" . $_POST["cardNumber2"] . " and s_id=" . $_POST["setNumber2"] . ";");
             }
-            if(isset($_POST["userID"]))
+            if(isset($_POST["viewAction"]))
             {
               if (isset($_POST["rarities"]) or isset($_POST["minMana"]) or isset($_POST["maxMana"])){
                 $conds = "";
@@ -124,10 +116,10 @@
                   $conds = "and price<=" . $_POST["maxPrice"] . " " . $conds;
                 }
                 $conds = trim($conds) . ";";
-                $data = $this->db->query("select * from (cards c JOIN card_on_wishlist cw ON c.cn=cw.cn AND c.setCode=cw.s_id) where u_id =" . $_POST["userID"] . " " . $conds); 
+                $data = $this->db->query("select * from (cards c JOIN card_on_wishlist cw ON c.cn=cw.cn AND c.setCode=cw.s_id) where u_id =" . $_SESSION["id"] . " " . $conds); 
               }
               else{
-                $data = $this->db->query("select * from card_on_wishlist where u_id = ?;", "i", $_POST["userID"]);
+                $data = $this->db->query("select * from card_on_wishlist where u_id = ?;", "i", $_SESSION["id"]);
               }
               $leng = count($data);
               if ($leng==0){

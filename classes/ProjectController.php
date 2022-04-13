@@ -47,6 +47,10 @@ class ProjectController
         include("templates/footer.php");
     }
 
+    public function logIn(){
+        include("templates/login.php");
+    }
+
     public function run()
     {
         switch ($this->command) {
@@ -55,6 +59,9 @@ class ProjectController
                 break;
             case "wish":
                 $this->wishList();
+                break;
+            case "logIn":
+                $this->logIn();
                 break;
             default:
                 $this->welcome();
