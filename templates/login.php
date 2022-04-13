@@ -8,7 +8,7 @@
         <p class="font-weight-bold" style="font-weight:bold;color:orange;font-size:20px;margin-left:200px">Enter Username:</p>
         <input type="text" class="form-control" name="userName" required style="width:1000px;margin-left:auto;margin-right:auto"/>
         <p class="font-weight-bold" style="font-weight:bold;color:orange;font-size:20px;margin-left:200px">Enter Password:</p>
-        <input type="text" class="form-control" name="password" required style="width:1000px;margin-left:auto;margin-right:auto"/>
+        <input type="password" class="form-control" name="password" required style="width:1000px;margin-left:auto;margin-right:auto"/>
         <input class="btn btn-primary" type="submit" name="loginAction" value="Sign in" required style="width:1000px;margin-left:auto;margin-right:auto"/>
     </div>
 </form>
@@ -22,7 +22,6 @@
         else{
             $checkU = $this->db->query("select * from users where username='" . $_POST["userName"] . "';");
             if(count($checkU) == 1){
-                echo nl2br($checkU[0]['password'] . "/n" . password_hash($_POST["password"], PASSWORD_DEFAULT));
                 if (password_verify($_POST["password"], $checkU[0]['password'])){
                     session_destroy();
                     session_start();
@@ -55,7 +54,7 @@
         <input type="text" class="form-control" name="userName2" required style="width:1000px;margin-left:auto;margin-right:auto"/>
         <p></p>
         <p class="font-weight-bold" style="font-weight:bold;color:orange;font-size:20px;margin-left:200px">Enter Password:</p>
-        <input type="text" class="form-control" name="password2" required style="width:1000px;margin-left:auto;margin-right:auto"/>
+        <input type="password" class="form-control" name="password2" required style="width:1000px;margin-left:auto;margin-right:auto"/>
         <p></p>
         <input class="btn btn-info" type="submit" name="signUpAction" value="Sign up" required style="width:1000px;margin-left:auto;margin-right:auto"/>
     </div>
