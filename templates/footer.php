@@ -15,7 +15,7 @@
         <ul class="nav justify-content-center pb-3 mb-3 footerlist">
             <li><a href="?command=welcome" class="visited nav-link px-2">Placeholder</a></li>
             <li><a href="?command=view_project" class="visited nav-link px-2">Placeholder</a></li>
-            <li><a href="?command=create_project" class="visited nav-link px-2">Placeholder</a></li>
+            <li><a href="http://localhost/4750-mtg-database/wishlistView.php" class="visited nav-link px-2">Go to Wishlist</a></li>
             <li><a href="?command=chat" class="visited nav-link px-2">Placeholder</a></li>
             <li><a href="#" class="visited nav-link px-2">Placeholder</a></li>
         </ul>

@@ -41,11 +41,20 @@ class ProjectController
         include("templates/footer.php");
     }
 
+    public function wishList(){
+        include("templates/header.php");
+        include("templates/wishListPage.php ");
+        include("templates/footer.php");
+    }
+
     public function run()
     {
         switch ($this->command) {
             case "howtoDoFunc":
                 $this->howtoDoFunc();
+                break;
+            case "wish":
+                $this->wishList();
                 break;
             default:
                 $this->welcome();
