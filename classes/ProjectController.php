@@ -27,6 +27,22 @@ class ProjectController
         include("templates/welcome.php");
         include("templates/footer.php");
     }
+
+    public function upload_card() {
+        
+        $thisRan = "america";
+        if(isset($_POST["searchforcard"])) {
+            $searchString = "%" . $_POST["searchforcard"] . "%";
+            $data = $this->db->query("select * from cards where name LIKE ?;", "s", $searchString);
+            $thisRan = $searchString;
+        } else {
+            $data = $this->db->query("select * from cards");
+            
+        }
+        include("templates/header.php");
+        include("templates/upload-card.php");
+        include("templates/footer.php");
+    }
     public function howtoDoFunc() {
         /*First variable is SQL query itself, ? marks variable input. Second parameter
         is always the data type in order from left to right in string format, so "si" is first ? 
@@ -68,6 +84,9 @@ class ProjectController
             case "pack":
                 $packnum = $_GET['packnum'];
                 $this->get_pack($packnum);
+                break;
+            case "upload_card":
+                $this->upload_card();
                 break;
             default:
                 $this->welcome();
