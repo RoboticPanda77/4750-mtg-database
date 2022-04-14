@@ -27,29 +27,6 @@ class ProjectController
         include("templates/welcome.php");
         include("templates/footer.php");
     }
-
-    public function friends() {
-
-        include("templates/header.php");
-        include("templates/friendsPage.php");
-        include("templates/footer.php");
-    }
-
-    public function upload_card() {
-        
-        $thisRan = "america";
-        if(isset($_POST["searchforcard"])) {
-            $searchString = "%" . $_POST["searchforcard"] . "%";
-            $data = $this->db->query("select * from cards where name LIKE ?;", "s", $searchString);
-            $thisRan = $searchString;
-        } else {
-            $data = $this->db->query("select * from cards");
-            
-        }
-        include("templates/header.php");
-        include("templates/upload-card.php");
-        include("templates/footer.php");
-    }
     public function howtoDoFunc() {
         /*First variable is SQL query itself, ? marks variable input. Second parameter
         is always the data type in order from left to right in string format, so "si" is first ? 
@@ -65,28 +42,18 @@ class ProjectController
     }
     public function packs() {
         #$data = $this->db->query("select * from packs natural join sets where u_id = ?;", "i", 1);
-        $data = $this->db->query("select * from packs natural join sets where u_id = ?;", "s", $_SESSION["u_id"]);
+        $data = $this->db->query("select * from packs natural join sets natural join users where username = ?;", "s", Config::$db["user"]);
         include("templates/header.php");
         include("templates/packs-view.php");
         //print_r($data); <-- useful print function for arrays
         include("templates/footer.php");
     }
     public function get_pack($packnum) {
-        $data = $this->db->query("select * from pack_contains natural join cards where u_id = ? and p_num = ?;", "si", $_SESSION["u_id"], $packnum);
+        $data = $this->db->query("select * from pack_contains natural join users natural join cards where username = ? and p_num = ?;", "si", Config::$db["user"], $packnum);
         include("templates/header.php");
         include("templates/single-pack.php");
         //print_r($data); <-- useful print function for arrays
         include("templates/footer.php");
-    }
-
-    public function wishList(){
-        include("templates/header.php");
-        include("templates/wishListPage.php ");
-        include("templates/footer.php");
-    }
-
-    public function logIn(){
-        include("templates/login.php");
     }
 
     public function run()
@@ -95,23 +62,12 @@ class ProjectController
             case "howtoDoFunc":
                 $this->howtoDoFunc();
                 break;
-            case "friends":
-                $this->friends();
-                break;
             case "packs":
                 $this->packs();
                 break;
             case "pack":
                 $packnum = $_GET['packnum'];
                 $this->get_pack($packnum);
-                break;
-            case "upload_card":
-                $this->upload_card();
-            case "wish":
-                $this->wishList();
-                break;
-            case "logIn":
-                $this->logIn();
                 break;
             default:
                 $this->welcome();
