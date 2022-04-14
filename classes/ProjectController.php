@@ -35,6 +35,21 @@ class ProjectController
         include("templates/footer.php");
     }
 
+    public function upload_card() {
+        
+        $thisRan = "america";
+        if(isset($_POST["searchforcard"])) {
+            $searchString = "%" . $_POST["searchforcard"] . "%";
+            $data = $this->db->query("select * from cards where name LIKE ?;", "s", $searchString);
+            $thisRan = $searchString;
+        } else {
+            $data = $this->db->query("select * from cards");
+            
+        }
+        include("templates/header.php");
+        include("templates/upload-card.php");
+        include("templates/footer.php");
+    }
     public function howtoDoFunc() {
         /*First variable is SQL query itself, ? marks variable input. Second parameter
         is always the data type in order from left to right in string format, so "si" is first ? 
@@ -48,6 +63,21 @@ class ProjectController
         //print_r($data); <-- useful print function for arrays
         include("templates/footer.php");
     }
+    public function packs() {
+        #$data = $this->db->query("select * from packs natural join sets where u_id = ?;", "i", 1);
+        $data = $this->db->query("select * from packs natural join sets where u_id = ?;", "s", $_SESSION["u_id"]);
+        include("templates/header.php");
+        include("templates/packs-view.php");
+        //print_r($data); <-- useful print function for arrays
+        include("templates/footer.php");
+    }
+    public function get_pack($packnum) {
+        $data = $this->db->query("select * from pack_contains natural join cards where u_id = ? and p_num = ?;", "si", $_SESSION["u_id"], $packnum);
+        include("templates/header.php");
+        include("templates/single-pack.php");
+        //print_r($data); <-- useful print function for arrays
+        include("templates/footer.php");
+    }
 
     public function run()
     {
@@ -57,6 +87,16 @@ class ProjectController
                 break;
             case "friends":
                 $this->friends();
+                break;
+            case "packs":
+                $this->packs();
+                break;
+            case "pack":
+                $packnum = $_GET['packnum'];
+                $this->get_pack($packnum);
+                break;
+            case "upload_card":
+                $this->upload_card();
                 break;
             default:
                 $this->welcome();

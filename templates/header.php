@@ -63,6 +63,12 @@
             <li class="nav-item">
                 <a class="nav-link active" href="?command=friends">Friends List</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="?command=packs">Your Packs</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="?command=upload_card">Add A Card</a>
+            </li>
         </ul>
     </nav>
 </body>
