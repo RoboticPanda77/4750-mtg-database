@@ -47,6 +47,9 @@ class ProjectController
             case "howtoDoFunc":
                 $this->howtoDoFunc();
                 break;
+            case "friends":
+                $this->friends();
+                break;
             default:
                 $this->welcome();
         }
