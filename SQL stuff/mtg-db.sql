@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 18, 2022 at 05:34 AM
+-- Generation Time: Apr 14, 2022 at 11:54 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -2413,24 +2413,26 @@ INSERT INTO `sets` (`s_id`, `size`, `code`, `name`, `release_date`) VALUES
 CREATE TABLE `users` (
   `u_id` int(11) NOT NULL,
   `username` varchar(20) DEFAULT NULL,
-  `networth` double DEFAULT 0
+  `networth` double DEFAULT 0,
+  `password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`u_id`, `username`, `networth`) VALUES
-(1, 'user1', 10),
-(2, 'user2', 20),
-(3, 'user3', 400),
-(4, 'user4', 500),
-(5, 'hiimauser', 600),
-(6, 'pickupsticks', 12345),
-(7, 'sanddunes', 54321),
-(8, 'hellogoodsir', 12414),
-(9, 'jealous', 1245),
-(10, 'AMERICA', 6414);
+INSERT INTO `users` (`u_id`, `username`, `networth`, `password`) VALUES
+(1, 'user1', 10, ''),
+(2, 'user2', 20, ''),
+(3, 'user3', 400, ''),
+(4, 'user4', 500, ''),
+(5, 'hiimauser', 600, ''),
+(6, 'pickupsticks', 12345, ''),
+(7, 'sanddunes', 54321, ''),
+(8, 'hellogoodsir', 12414, ''),
+(9, 'jealous', 1245, ''),
+(10, 'AMERICA', 6414, ''),
+(11, 'Kevin', 0, '$2y$10$QxHfwXJMOkkr5QgpeKfY0e25a8CS2X9HISjbGQJc/WFtoE7QA0mrW');
 
 -- --------------------------------------------------------
 
