@@ -17,7 +17,7 @@
             <li><a href="?command=view_project" class="visited nav-link px-2">Placeholder</a></li>
             <li><a href="?command=create_project" class="visited nav-link px-2">Placeholder</a></li>
             <li><a href="?command=chat" class="visited nav-link px-2">Placeholder</a></li>
-            <li><a href="#" class="visited nav-link px-2">Placeholder</a></li>
+            <<li><a href="http://localhost/4750-mtg-database/friendsView.php" class="visited nav-link px-2">Friends List</a></li>
         </ul>
         <p class="text-center">© 2022 Kevin Moritz, Can Unlu, Aidan Hesselroth, Nathaniel Monahan</p>
     </div>

@@ -28,6 +28,13 @@ class ProjectController
         include("templates/footer.php");
     }
 
+    public function friends() {
+
+        include("templates/header.php");
+        include("templates/friendsPage.php");
+        include("templates/footer.php");
+    }
+
     public function upload_card() {
         
         $thisRan = "america";
@@ -77,6 +84,9 @@ class ProjectController
         switch ($this->command) {
             case "howtoDoFunc":
                 $this->howtoDoFunc();
+                break;
+            case "friends":
+                $this->friends();
                 break;
             case "packs":
                 $this->packs();
