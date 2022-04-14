@@ -79,6 +79,16 @@ class ProjectController
         include("templates/footer.php");
     }
 
+    public function wishList(){
+        include("templates/header.php");
+        include("templates/wishListPage.php ");
+        include("templates/footer.php");
+    }
+
+    public function logIn(){
+        include("templates/login.php");
+    }
+
     public function run()
     {
         switch ($this->command) {
@@ -97,6 +107,11 @@ class ProjectController
                 break;
             case "upload_card":
                 $this->upload_card();
+            case "wish":
+                $this->wishList();
+                break;
+            case "logIn":
+                $this->logIn();
                 break;
             default:
                 $this->welcome();

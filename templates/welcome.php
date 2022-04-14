@@ -35,10 +35,13 @@
     <h4>How do I use the Card Collector?</h4>
     <div class="pt-4">
       <p>
-        To use the Card Collector you'll need to signup for an account!
+        Use the links below to view and modify your packs, cards, and wishlist!
       </p>
     </div>
   </div>
+  <form name="logOutForm" method="post" action="logout.php">
+    <input class="btn btn-danger" type="submit" name="logOutAction" value="Sign out" required style="width:100px;margin-left:720px"/>
+  </form>
 
   <!-- JavaScript Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
