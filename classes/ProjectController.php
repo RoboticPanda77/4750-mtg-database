@@ -27,6 +27,14 @@ class ProjectController
         include("templates/welcome.php");
         include("templates/footer.php");
     }
+
+    public function friends() {
+
+        include("templates/header.php");
+        include("templates/friendsPage.php");
+        include("templates/footer.php");
+    }
+
     public function howtoDoFunc() {
         /*First variable is SQL query itself, ? marks variable input. Second parameter
         is always the data type in order from left to right in string format, so "si" is first ? 
