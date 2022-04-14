@@ -58,14 +58,14 @@ class ProjectController
     }
     public function packs() {
         #$data = $this->db->query("select * from packs natural join sets where u_id = ?;", "i", 1);
-        $data = $this->db->query("select * from packs natural join sets natural join users where username = ?;", "s", Config::$db["user"]);
+        $data = $this->db->query("select * from packs natural join sets where u_id = ?;", "s", $_SESSION["u_id"]);
         include("templates/header.php");
         include("templates/packs-view.php");
         //print_r($data); <-- useful print function for arrays
         include("templates/footer.php");
     }
     public function get_pack($packnum) {
-        $data = $this->db->query("select * from pack_contains natural join users natural join cards where username = ? and p_num = ?;", "si", Config::$db["user"], $packnum);
+        $data = $this->db->query("select * from pack_contains natural join cards where u_id = ? and p_num = ?;", "si", $_SESSION["u_id"], $packnum);
         include("templates/header.php");
         include("templates/single-pack.php");
         //print_r($data); <-- useful print function for arrays
