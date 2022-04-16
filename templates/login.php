@@ -72,7 +72,8 @@
                 $maxId = $this->db->query("select max(u_id) from users");
                 $newId = intval($maxId[0]['max(u_id)']) + 1;
                 $hashed_p = password_hash($_POST["password2"], PASSWORD_DEFAULT);
-                $this->db->query("insert into users values(?, ?, ?);", "iss", $newId, $_POST["userName2"], $hashed_p);
+                $this->db->query("insert into users values(". $newId . ", '" . $_POST["userName2"] . "', 0, '". $hashed_p . "');");
+                $this->db->query("insert into wishlist values(". $newId . ", 0);");
                 $_SESSION["loggedin"] = true;
                 $_SESSION["id"] = $newId;
                 $_SESSION["username"] = $_POST["userName2"];
