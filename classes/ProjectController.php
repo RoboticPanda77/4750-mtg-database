@@ -16,7 +16,7 @@ class ProjectController
     {
         if (!isset($_SESSION["email"])) {
             $_SESSION['badlogaccess'] = true;
-            header('Location: /4750-mtg-database/index.php');
+            header('Location: index.php');
         }
        
     }
