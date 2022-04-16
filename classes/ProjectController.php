@@ -168,7 +168,12 @@ class ProjectController
         }
         include("templates/login.php");
     }
-
+    public function logout() {
+        $_SESSION = array();
+        session_destroy();
+        header("Location: index.php");
+        exit();
+    }
     public function run()
     {
         switch ($this->command) {
@@ -199,6 +204,9 @@ class ProjectController
                 break;
             case "input_pack":
                 $this->input_pack();
+                break;
+            case "logout":
+                $this->logout();
                 break;
             default:
                 $this->welcome();

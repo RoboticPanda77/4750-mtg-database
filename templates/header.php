@@ -47,7 +47,7 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark px-3 bg-dark">
-        <a class="navbar-brand" href="?command=home">Magic The Gathering Database</a>
+        <a class="navbar-brand" href="#">Magic The Gathering Database</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -58,10 +58,7 @@
                 <a class="nav-link active" href="?command=welcome">Home</a>
             </li>
             <li class="nav-item">
-                <a class = "nav-link active" href="?command=collection">Card Collection</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="?command=friends">Friends List</a>
+                <a class="nav-link active" href="?command=collection">Card Collection</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link active" href="?command=packs">Your Packs</a>
@@ -69,15 +66,18 @@
             <li class="nav-item">
                 <a class="nav-link active" href="?command=upload_card">Add A Card</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="?command=wish">Wishlist</a>
-            </li>
-            <li class="nav-item">
-            <form name="logOutForm" method="post" action="logout.php">
-                <input class="btn btn-danger" type="submit" name="logOutAction" value="Sign out" required style="width:100px"/>
-            </form>
-            </li>
         </ul>
+        <?php
+        if (isset($_SESSION["loggedin"])) {
+            echo "<div class=\"ps-2\">";
+            echo    "<div style=\"display: flex; justify-content: flex-end;\">";
+            echo        "<u class = \"px-2 py-2\" style=\"color:white;\">" . $_SESSION["username"] . "</u>";
+            echo        "<a role=\"button\" class=\"btn btn-outline-danger mx-1\" href=\"?command=logout\">Logout</a>";
+            echo    "</div>";
+            echo "</div>";
+        }
+
+        ?>
     </nav>
 </body>
 
