@@ -90,9 +90,15 @@ class ProjectController
             $packval = 0;
             foreach($array as $card)
             {
-                $packvals = $this->db->query("select price from cards where cn = ? and s_id = ?", "ii", $_POST["card_number"][$card], $_POST["set"]);
+                $packvals = $this->db->query("select price from cards where cn = ? and s_id = ?;", "ii", $_POST["card_number"][$card], $_POST["set"]);
                 $packval += $packvals[0]["price"];
-                $this->db->query("insert into pack_contains values(?, ?, ?, ?)", "iiii", $_SESSION["id"], $pnum, $_POST["card_number"][$card], $_POST["set"]);
+                $this->db->query("insert into pack_contains values(?, ?, ?, ?);", "iiii", $_SESSION["id"], $pnum, $_POST["card_number"][$card], $_POST["set"]);
+                $card_in_collection = $this->db->query("select count from owns_card where u_id = ? and cn = ? and s_id = ?;", "iii", $_SESSION["id"], $_POST["card_number"][$card], $_POST["set"]);
+                if(isset($card_in_collection[0]["count"]))
+                {
+                    $this->db->query("update owns_card set count = ? where u_id = ? and cn = ? and s_id = ?", "iiii", $card_in_collection[0]["count"] + 1, $_SESSION["id"], $_POST["card_number"][$card], $_POST["set"]);
+                }
+                else $this->db->query("insert into owns_card values(?, ?, ?, ?);", "iiii", $_SESSION["id"], $_POST["card_number"][$card], 1, $_POST["set"]);
             }
             $this->db->query("insert into packs values(?, ?, ?, ?, ?)", "iiiis", $_SESSION["id"], $pnum, $_POST["set"], $packval, $_POST["type"]);
             echo   "<html>
