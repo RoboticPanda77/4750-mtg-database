@@ -72,6 +72,11 @@
             <li class="nav-item">
                 <a class="nav-link active" href="?command=wish">Wishlist</a>
             </li>
+            <li class="nav-item">
+            <form name="logOutForm" method="post" action="logout.php">
+                <input class="btn btn-danger" type="submit" name="logOutAction" value="Sign out" required style="width:100px"/>
+            </form>
+            </li>
         </ul>
     </nav>
 </body>
