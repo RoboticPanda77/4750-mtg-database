@@ -160,7 +160,9 @@ class ProjectController
             unset($_SESSION["badlogaccess"]);
             session_destroy();
         }
+        include("templates/header.php");
         include("templates/login.php");
+        include("templates/footer.php");
     }
     public function logout() {
         $_SESSION = array();
