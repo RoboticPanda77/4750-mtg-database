@@ -97,7 +97,7 @@ class ProjectController
             $this->db->query("insert into packs values(?, ?, ?, ?, ?)", "iiiis", $_SESSION["id"], $pnum, $_POST["set"], $packval, $_POST["type"]);
             echo   "<html>
                         <script type='text/javascript'>
-                            window.location.href = 'index.php'
+                            window.location.href = '?command=packs'
                         </script>
                     </html>";
         }

@@ -31,7 +31,6 @@ $cards_in_pack = $data;
   <tr style="background-color:#B0B0B0">
     <th>Card</th>        
     <th>Value</th>
-    <th></th>
   </tr>
   </thead>
   <?php foreach ($cards_in_pack as $card): ?>
