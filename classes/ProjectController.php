@@ -82,8 +82,8 @@ class ProjectController
         {
             $high_pnum = $this->db->query("select max(p_num) from packs natural join sets where u_id = ?;", "s", $_SESSION["id"]);
             $pnum = 0;
-            if(isset($high_pnum[0][0]))
-                $pnum = $high_pnum[$pnum];
+            if(isset($high_pnum[0]["max(p_num)"]))
+                $pnum = $high_pnum[0]["max(p_num)"];
             $pnum += 1;
             $this->db->query("insert into owns_pack values(?, ?, ?)", "iii", $_SESSION["id"], $pnum, $_POST["set"]);
             $array = array_keys($_POST["card_number"]);
@@ -91,7 +91,7 @@ class ProjectController
             foreach($array as $card)
             {
                 $packvals = $this->db->query("select price from cards where cn = ? and s_id = ?", "ii", $_POST["card_number"][$card], $_POST["set"]);
-                $packval += $packvals[0][0];
+                $packval += $packvals[0]["price"];
                 $this->db->query("insert into pack_contains values(?, ?, ?, ?)", "iiii", $_SESSION["id"], $pnum, $_POST["card_number"][$card], $_POST["set"]);
             }
             $this->db->query("insert into packs values(?, ?, ?, ?, ?)", "iiiis", $_SESSION["id"], $pnum, $_POST["set"], $packval, $_POST["type"]);
