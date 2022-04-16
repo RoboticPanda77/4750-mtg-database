@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -152,10 +151,22 @@
           <div class="container">
             <?php
               if (isset($_POST["addCardAction"])){
-                $this->db->query("insert into card_on_wishlist values(" . $_SESSION["id"] . ", " . $_POST["cardNumber"] . ", " . $_POST["setNumber"] . ")");
+                $addCheck = $this->db->query("select * from card_on_wishlist where u_id=" . $_SESSION["id"] . " and cn=" . $_POST["cardNumber"] . " and s_id=" . $_POST["setNumber"] . ";");
+                if(count($addCheck)==0){
+                  $this->db->query("insert into card_on_wishlist values(" . $_SESSION["id"] . ", " . $_POST["cardNumber"] . ", " . $_POST["setNumber"] . ")");
+                  $card = $this->db->query("select * from cards where cn=" . $_POST["cardNumber"] . " and setCode=" . $_POST["setNumber"]);
+                  $cardVal = $card[0]['price']; 
+                  $this->db->query("update wishlist set val_d =(val_d + " . $cardVal . ") where u_id=" . $_SESSION["id"]);
+                }
               }
               if (isset($_POST["removeCardAction"])){
-                $this->db->query("delete from card_on_wishlist where u_id=" . $_SESSION["id"] . " and cn=" . $_POST["cardNumber2"] . " and s_id=" . $_POST["setNumber2"] . ";");
+                $remCheck = $this->db->query("select * from card_on_wishlist where u_id=" . $_SESSION["id"] . " and cn=" . $_POST["cardNumber2"] . " and s_id=" . $_POST["setNumber2"] . ";");
+                if(count($remCheck)==1){
+                  $this->db->query("delete from card_on_wishlist where u_id=" . $_SESSION["id"] . " and cn=" . $_POST["cardNumber2"] . " and s_id=" . $_POST["setNumber2"] . ";");
+                  $card = $this->db->query("select * from cards where cn=" . $_POST["cardNumber2"] . " and setCode=" . $_POST["setNumber2"]);
+                  $cardVal = $card[0]['price']; 
+                  $this->db->query("update wishlist set val_d =(val_d - " . $cardVal . ") where u_id=" . $_SESSION["id"]);
+                }
               }
               if(isset($_POST["viewAction"]))
               {
