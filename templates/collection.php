@@ -148,7 +148,7 @@
             <div class="row">
                 <div class="col-md-2"></div>
                 <div class="col-md-8">
-                    <table class="pt-2 table">
+                    <table class="pt-2 table"  style="background-color:gray">
 
                         <th>Card Name</th>
                         <th>Card Artist</th>
