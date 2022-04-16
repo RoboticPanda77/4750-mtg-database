@@ -42,7 +42,9 @@
                             switch ($cardItem):
                                 case "artist": ?>
                                     <li class="list-group-item">
-                                        <?php echo "Artist Name" . ": " . $val; ?>
+                                        <a href="?command=artist&aname=<?php echo $val ?>">
+                                            <?php echo "Artist Name" . ": " . $val; ?>
+                                        </a>
                                     </li>
                                 <?php break;
                                 case "colors": ?>

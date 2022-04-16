@@ -116,6 +116,15 @@ class ProjectController
         include("templates/single-pack.php");
         include("templates/footer.php");
     }
+    public function artist($aname) {
+        $this->isLoggedIn();
+        $artist = $this->db->query("select * from artists where artist = ?;", "s", $aname);
+        $a_id = $artist[0]["a_id"];
+        $cards = $this->db->query("select * from drawn_by natural join cards where a_id = ?;", "i", $a_id);
+        include("templates/header.php");
+        include("templates/artist.php");
+        include("templates/footer.php");
+    }
     public function input_pack() {
         if(isset($_POST["card_number"])) 
         {
@@ -189,6 +198,10 @@ class ProjectController
             case "pack":
                 $packnum = $_GET['packnum'];
                 $this->get_pack($packnum);
+                break;
+            case "artist":
+                $aname = $_GET['aname'];
+                $this->artist($aname);
                 break;
             case "upload_card":
                 $this->upload_card();
