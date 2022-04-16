@@ -1,69 +1,123 @@
 <!DOCTYPE html>
+<body style="background-color:#4a524d;color: white;">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <p></p>
 <p></p>
-<h4 style="font-weight:bold;color:orange;margin-left:20px;"> Login if you have an account</h4>
+<div class="container">
+    <h4 style="font-weight:bold;color:orange;"> Login if you have an account</h4>
+</div>
 <form name="logInForm" method="post">
-    <div class="row mb-3 mx-3">
-        <p class="font-weight-bold" style="font-weight:bold;color:orange;font-size:20px;margin-left:200px">Enter Username:</p>
-        <input type="text" class="form-control" name="userName" required style="width:1000px;margin-left:auto;margin-right:auto"/>
-        <p class="font-weight-bold" style="font-weight:bold;color:orange;font-size:20px;margin-left:200px">Enter Password:</p>
-        <input type="password" class="form-control" name="password" required style="width:1000px;margin-left:auto;margin-right:auto"/>
-        <input class="btn btn-primary" type="submit" name="loginAction" value="Sign in" required style="width:1000px;margin-left:auto;margin-right:auto"/>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <p class="font-weight-bold" style="font-weight:bold;color:orange;font-size:20px">Enter Username:</p>
+            </div>
+            <div class="col-sm">
+                <p class="font-weight-bold" style="font-weight:bold;color:orange;font-size:20px">Enter Password:</p>
+            </div>
+            <div class="col-sm">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <input type="text" class="form-control" name="userName" required style="width:160px"/>
+            </div>
+            <div class="col-sm">
+                <input type="password" class="form-control" name="password" required style="width:150px"/>
+            </div>
+            <div class="col-sm">
+                <input class="btn btn-primary" type="submit" name="loginAction" value="Sign in" required style="width:100px"/>
+            </div>
+        </div>
     </div>
 </form>
 <?php
     if(isset($_POST["userName"]) and isset($_POST["password"]) and isset($_POST["loginAction"])){
         if($_POST["userName"] == ""){
             echo "<html>";
-            echo "<p style='margin-left:660px;font-weight:bold;color:red;'>Please Enter a Valid Username </p>";
+            echo "<div class='row'><p></p></div>";
+            echo "<div class='row'><p></p></div>";
+            echo "<center><p style='font-weight:bold;color:red;'>Please Enter a Valid Username</p><center>";
             echo "</html>";
         }
         else{
             $checkU = $this->db->query("select * from users where username= ?;", "s", $_POST["userName"]);
             if(count($checkU) == 1){
                 if (password_verify($_POST["password"], $checkU[0]['password'])){
-                    session_destroy();
-                    session_start();
                     $_SESSION["loggedin"] = true;
                     $_SESSION["id"] = $checkU[0]['u_id'];
                     $_SESSION["username"] = $checkU[0]['username'];
-                    header("Location: index.php");
-                    exit();
+                    echo "<html>";
+                    echo "<script type='text/javascript'>";
+                    echo "window.location.href = 'index.php'";
+                    echo "</script>";
+                    echo "</html>";
                 }
                 else{
                     echo "<html>";
-                    echo "<p style='margin-left:705px;font-weight:bold;color:red;'>Wrong Password </p>";
+                    echo "<div class='row'><p></p></div>";
+                    echo "<div class='row'><p></p></div>";
+                    echo "<center><p style='font-weight:bold;color:red;'>Wrong Password</p></center>";
                     echo "</html>";
                 }
             }
             else{
                 echo "<html>";
-                echo "<p style='margin-left:660px;font-weight:bold;color:red;'>Please Enter a Valid Username </p>";
+                echo "<div class='row'><p></p></div>";
+                echo "<div class='row'><p></p></div>";
+                echo "<center><p style='font-weight:bold;color:red;'>Please Enter a Valid Username</p></center>";
                 echo "</html>";
             }
         }
     }
 ?>
-<p></p>
-<p></p>
-<h4 style="font-weight:bold;color:orange;margin-left:20px;"> Sign up if you don't have an account</h4>
+<div class="row">
+    <p></p>
+</div>
+<div class="row">
+    <p></p>
+</div>
+<div class="row">
+    <p></p>
+</div>
+<div class="row">
+    <p></p>
+</div>
+<div class="container">
+    <h4 style="font-weight:bold;color:orange;"> Sign up if you don't have an account</h4>
+</div>
 <form name="signUpForm" method="post">
-    <div class="row mb-3 mx-3">
-        <p class="font-weight-bold" style="font-weight:bold;color:orange;font-size:20px;margin-left:200px">Enter Username:</p>
-        <input type="text" class="form-control" name="userName2" required style="width:1000px;margin-left:auto;margin-right:auto"/>
-        <p></p>
-        <p class="font-weight-bold" style="font-weight:bold;color:orange;font-size:20px;margin-left:200px">Enter Password:</p>
-        <input type="password" class="form-control" name="password2" required style="width:1000px;margin-left:auto;margin-right:auto"/>
-        <p></p>
-        <input class="btn btn-info" type="submit" name="signUpAction" value="Sign up" required style="width:1000px;margin-left:auto;margin-right:auto"/>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <p class="font-weight-bold" style="font-weight:bold;color:orange;font-size:20px">Enter Username:</p>
+            </div>
+            <div class="col-sm">
+                <p class="font-weight-bold" style="font-weight:bold;color:orange;font-size:20px">Enter Password:</p>
+            </div>
+            <div class="col-sm">
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <input type="text" class="form-control" name="userName2" required style="width:160px;"/>
+            </div>
+            <div class="col-sm">
+                <input type="password" class="form-control" name="password2" required style="width:150px"/>
+            </div>
+            <div class="col-sm">
+                <input class="btn btn-info" type="submit" name="signUpAction" value="Sign up" required style="width:100px"/>
+            </div>
+        </div>
     </div>
 </form>
 <?php
     if(isset($_POST["userName2"]) and isset($_POST["password2"]) and isset($_POST["signUpAction"])){
         if($_POST["userName2"] == ""){
             echo "<html>";
-            echo "<p style='margin-left:660px;font-weight:bold;color:red;'>Please Enter a Valid Username </p>";
+            echo "<p style='font-weight:bold;color:red;'>Please Enter a Valid Username </p>";
             echo "</html>";
         }
         else{
@@ -86,10 +140,13 @@
             }
             else{
                 echo "<html>";
-                echo "<p style='margin-left:660px;font-weight:bold;color:red;'>This username is already being used </p>";
+                echo "<div class='row'><p></p></div>";
+                echo "<div class='row'><p></p></div>";
+                echo "<center><p style='font-weight:bold;color:red;'>This username is already being used </p></center>";
                 echo "</html>";
             }
         }
     }
 ?>
+</body>
 </html>
