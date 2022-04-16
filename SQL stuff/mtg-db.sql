@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 14, 2022 at 11:54 PM
+-- Generation Time: Apr 16, 2022 at 06:01 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -251,7 +251,7 @@ CREATE TABLE `cards` (
   `price` double DEFAULT NULL,
   `rarity` varchar(20) DEFAULT NULL,
   `rules_text` varchar(1000) DEFAULT NULL,
-  `setCode` int(11) NOT NULL,
+  `s_id` int(11) NOT NULL,
   `subtypes` varchar(30) DEFAULT NULL,
   `toughness` int(11) DEFAULT NULL,
   `types` varchar(30) DEFAULT NULL
@@ -261,7 +261,7 @@ CREATE TABLE `cards` (
 -- Dumping data for table `cards`
 --
 
-INSERT INTO `cards` (`cn`, `artist`, `cardindex`, `colors`, `convertedManaCost`, `flavor_text`, `loyalty`, `manaCost`, `manaValue`, `mtgjsonV4Id`, `multiverseId`, `name`, `power`, `price`, `rarity`, `rules_text`, `setCode`, `subtypes`, `toughness`, `types`) VALUES
+INSERT INTO `cards` (`cn`, `artist`, `cardindex`, `colors`, `convertedManaCost`, `flavor_text`, `loyalty`, `manaCost`, `manaValue`, `mtgjsonV4Id`, `multiverseId`, `name`, `power`, `price`, `rarity`, `rules_text`, `s_id`, `subtypes`, `toughness`, `types`) VALUES
 (1, 'Anthony Palumbo', 31644, 'W', 2, 'Inner strength is never seen until it makes all the difference.', 0, '{1}{W}', 2, 'afc1ca2e-736b-57e1-a46f-4072b7941d4b', 447137, 'Aegis of the Heavens', 0, 0.1, 'uncommon', 'Target creature gets +1/+7 until end of turn.', 226, '', 0, 'Instant'),
 (1, 'Dan Scott', 31959, 'W', 3, '\"Oh, you must be mistaken. Hawks are solitary hunters, you see.\"\r\nâ€”Bunder Diedreck, ornithologist', 0, '{2}{W}', 3, '956bfe6a-c5b5-5158-b62e-94d5fc81b696', 466755, 'Aerial Assault', 0, 0.02, 'common', 'Destroy target tapped creature. You gain 1 life for each creature you control with flying.', 227, '', 0, 'Sorcery'),
 (2, 'Izzy', 31645, 'W', 4, 'Most smiths shape metal, but some prefer more delicate materials.', 0, '{3}{W}', 4, '9ee6fd91-5aaa-5ba6-b9fe-122b4bd48718', 447138, 'Aethershield Artificer', 3, 0.15, 'uncommon', 'At the beginning of combat on your turn, target artifact creature you control gets +2/+2 and gains indestructible until end of turn. (Damage and effects that say \"destroy\" don\'t destroy it.)', 226, 'Dwarf,Artificer', 3, 'Creature'),
@@ -401,7 +401,7 @@ INSERT INTO `cards` (`cn`, `artist`, `cardindex`, `colors`, `convertedManaCost`,
 (69, 'Adam Paquette', 31712, 'U', 3, '\"Industry without artistry is just a fancy way to fill the junkyard.\"', 0, '{2}{U}', 3, 'b37329f5-9fd2-538e-bdbf-c15787a8f6ba', 447205, 'Sai, Master Thopterist', 1, 3.31, 'rare', 'Whenever you cast an artifact spell, create a 1/1 colorless Thopter artifact creature token with flying.\r\n{1}{U}, Sacrifice two artifacts: Draw a card.', 226, 'Human,Artificer', 4, 'Creature'),
 (69, 'Magali Villeneuve', 32027, 'U', 2, '\"As one, nature lifts its voice to tell you this: \'No.\'\"', 0, '{1}{U}', 2, '496f2591-188b-53b8-9842-bb2b11638569', 466823, 'Negate', 0, 0.13, 'common', 'Counter target noncreature spell.', 227, '', 0, 'Instant'),
 (70, 'Lars Grant-West', 31713, 'U', 5, 'The greatest treasure of the deep is an echo from above.', 0, '{3}{U}{U}', 5, '3cc87011-3a60-558f-9422-a24c764fc5e4', 447206, 'Salvager of Secrets', 2, 0.13, 'common', 'When Salvager of Secrets enters the battlefield, return target instant or sorcery card from your graveyard to your hand.', 226, 'Merfolk,Wizard', 2, 'Creature');
-INSERT INTO `cards` (`cn`, `artist`, `cardindex`, `colors`, `convertedManaCost`, `flavor_text`, `loyalty`, `manaCost`, `manaValue`, `mtgjsonV4Id`, `multiverseId`, `name`, `power`, `price`, `rarity`, `rules_text`, `setCode`, `subtypes`, `toughness`, `types`) VALUES
+INSERT INTO `cards` (`cn`, `artist`, `cardindex`, `colors`, `convertedManaCost`, `flavor_text`, `loyalty`, `manaCost`, `manaValue`, `mtgjsonV4Id`, `multiverseId`, `name`, `power`, `price`, `rarity`, `rules_text`, `s_id`, `subtypes`, `toughness`, `types`) VALUES
 (70, 'Grzegorz Rutkowski', 32028, 'U', 4, 'In every swirl of the tide, it sees the awakening of things yet to come.', 0, '{3}{U}', 4, '44bc5b9f-3c3b-5575-a6a3-fc77a777bacd', 466824, 'Octoprophet', 3, 0.04, 'common', 'When Octoprophet enters the battlefield, scry 2. (Look at the top two cards of your library, then put any number of them on the bottom of your library and the rest on top in any order.)', 227, 'Octopus', 3, 'Creature'),
 (71, 'Tommy Arnold', 31714, 'U', 4, '\"The path of the stars is as reliable as the instruments that measure them.\"', 0, '{3}{U}', 4, '7d9bcfb8-e29c-5143-b9c7-d2ba86fc6cb5', 447207, 'Scholar of Stars', 3, 0.02, 'common', 'When Scholar of Stars enters the battlefield, if you control an artifact, draw a card.', 226, 'Human,Artificer', 2, 'Creature'),
 (71, 'Randy Vargas', 32029, 'U', 3, '\"If you need to disappear for a while, I know a place.\"\r\nâ€”Bilivus, master archivist', 0, '{2}{U}', 3, 'ce95476b-404b-5906-8b09-74d1983af8c0', 466825, 'Portal of Sanctuary', 0, 0.11, 'uncommon', '{1}, {T}: Return target creature you control and each Aura attached to it to their owners\' hands. Activate only during your turn.', 227, '', 0, 'Artifact'),
@@ -538,7 +538,7 @@ INSERT INTO `cards` (`cn`, `artist`, `cardindex`, `colors`, `convertedManaCost`,
 (137, 'Even Amundsen', 31780, 'R', 2, 'First the insult, then the encore.', 0, '{R}{R}', 2, '0c019294-e6f2-5d0f-9f8c-15af9a12e516', 447273, 'Doublecast', 0, 0.16, 'uncommon', 'When you cast your next instant or sorcery spell this turn, copy that spell. You may choose new targets for the copy.', 226, '', 0, 'Sorcery'),
 (137, 'Steve Prescott', 32095, 'R', 2, 'Not every job in the goblin army is glamorous. Actually, *no* job in the goblin army is glamorous.', 0, '{R}{R}', 2, '3d18687a-c2f8-5d0e-a56f-8482f98c1bab', 466891, 'Ember Hauler', 2, 0.02, 'uncommon', '{1}, Sacrifice Ember Hauler: It deals 2 damage to any target.', 227, 'Goblin', 2, 'Creature'),
 (138, 'Jack Wang', 31781, 'R', 3, 'Dragon birth lairs are littered with treasure to entice the young from their eggs.', 0, '{2}{R}', 3, '42063f72-47ac-50c5-a33d-b66c87cd8904', 447274, 'Dragon Egg', 0, 0.08, 'uncommon', 'Defender\r\nWhen Dragon Egg dies, create a 2/2 red Dragon creature token with flying and \"{R}: This creature gets +1/+0 until end of turn.\"', 226, 'Dragon,Egg', 2, 'Creature');
-INSERT INTO `cards` (`cn`, `artist`, `cardindex`, `colors`, `convertedManaCost`, `flavor_text`, `loyalty`, `manaCost`, `manaValue`, `mtgjsonV4Id`, `multiverseId`, `name`, `power`, `price`, `rarity`, `rules_text`, `setCode`, `subtypes`, `toughness`, `types`) VALUES
+INSERT INTO `cards` (`cn`, `artist`, `cardindex`, `colors`, `convertedManaCost`, `flavor_text`, `loyalty`, `manaCost`, `manaValue`, `mtgjsonV4Id`, `multiverseId`, `name`, `power`, `price`, `rarity`, `rules_text`, `s_id`, `subtypes`, `toughness`, `types`) VALUES
 (138, 'Joe Slucher', 32096, 'R', 5, '\"The best way to learn from a book on pyromancy is to burn it.\"\r\nâ€”Jaya Ballard', 0, '{3}{R}{R}', 5, '3b78e01b-966e-5ce6-a1a6-7331700ab4fe', 466892, 'Fire Elemental', 5, 0.01, 'common', '', 227, 'Elemental', 4, 'Creature'),
 (139, 'Craig J Spearing', 31782, 'R', 4, '\"Some hid from the storm. I embraced it and learned its name.\"', 0, '{3}{R}', 4, '865857a5-9d03-511b-bb1e-4fb5364aecdf', 447275, 'Electrify', 0, 0.01, 'common', 'Electrify deals 4 damage to target creature.', 226, '', 0, 'Instant'),
 (139, 'Viktor Titov', 32097, 'R', 3, '\"I have calculated that a dragon in flight, in a single strafing run, can cover an area ofâ€”\"\r\nâ€”Thaedus the Clever, last words', 0, '{2}{R}', 3, '57420781-f6af-5a70-a1a6-1f4eced430a1', 466893, 'Flame Sweep', 0, 0.14, 'uncommon', 'Flame Sweep deals 2 damage to each creature except for creatures you control with flying.', 227, '', 0, 'Instant'),
@@ -675,7 +675,7 @@ INSERT INTO `cards` (`cn`, `artist`, `cardindex`, `colors`, `convertedManaCost`,
 (205, 'Ryan Pancoast', 31848, 'G', 2, 'The massive dominate through might. The tiny survive with guile. Beware the tiny who become massive.', 0, '{1}{G}', 2, '7cb6ef86-a9ba-5742-aa69-502bd296aad7', 447341, 'Titanic Growth', 0, 0.02, 'common', 'Target creature gets +4/+4 until end of turn.', 226, '', 0, 'Instant'),
 (205, 'Randy Vargas', 32163, 'G', 2, '\"Every footfall on the forest floor is a heartbeat sending strength into my veins.\"', 0, '{1}{G}', 2, '24e2945f-5c92-5420-9a80-ec5c4861d08b', 466959, 'Woodland Champion', 2, 0.08, 'uncommon', 'Whenever one or more tokens enter the battlefield under your control, put that many +1/+1 counters on Woodland Champion.', 227, 'Elf,Scout', 2, 'Creature'),
 (206, 'Uriah Voth', 31849, 'G', 5, 'Villagers employ watchdogs as guardians and companions. Druids prefer something a little bigger.', 0, '{3}{G}{G}', 5, '5c043578-5697-5b42-b6e7-7735e74ba196', 447342, 'Vigilant Baloth', 5, 0.02, 'uncommon', 'Vigilance (Attacking doesn\'t cause this creature to tap.)', 226, 'Beast', 5, 'Creature');
-INSERT INTO `cards` (`cn`, `artist`, `cardindex`, `colors`, `convertedManaCost`, `flavor_text`, `loyalty`, `manaCost`, `manaValue`, `mtgjsonV4Id`, `multiverseId`, `name`, `power`, `price`, `rarity`, `rules_text`, `setCode`, `subtypes`, `toughness`, `types`) VALUES
+INSERT INTO `cards` (`cn`, `artist`, `cardindex`, `colors`, `convertedManaCost`, `flavor_text`, `loyalty`, `manaCost`, `manaValue`, `mtgjsonV4Id`, `multiverseId`, `name`, `power`, `price`, `rarity`, `rules_text`, `s_id`, `subtypes`, `toughness`, `types`) VALUES
 (206, 'Karl Kopinski', 32164, 'B,W', 2, '\"With each knight that rode out from the bone-white keep, the queen\'s soldiers felt their courage failing.\"\r\nâ€”Krinnea, *Siege of the Bone Spire*', 0, '{W}{B}', 2, '5f22783f-fd8f-52ce-bb87-98e383fb4d2e', 466960, 'Corpse Knight', 2, 0.68, 'uncommon', 'Whenever another creature enters the battlefield under your control, each opponent loses 1 life.', 227, 'Zombie,Knight', 2, 'Creature'),
 (207, 'Alex Konstad', 31850, 'G', 4, 'When it passes, the dead are displaced by flourishing life.', 0, '{2}{G}{G}', 4, '4a1cdfbc-b608-597b-b3bf-6cdd83a6e131', 447343, 'Vine Mare', 5, 0.15, 'uncommon', 'Hexproof (This creature can\'t be the target of spells or abilities your opponents control.)\r\nVine Mare can\'t be blocked by black creatures.', 226, 'Elemental,Horse', 3, 'Creature'),
 (207, 'Johan Grenier', 32166, 'G,R', 2, 'The destruction of a wildfire with the tenacity of a jungle vine.', 0, '{R}{G}', 2, '6c802537-c9e3-5e92-9677-ed88788d402e', 466961, 'Creeping Trailblazer', 2, 0.14, 'uncommon', 'Other Elementals you control get +1/+0.\r\n{2}{R}{G}: Creeping Trailblazer gets +1/+1 until end of turn for each Elemental you control.', 227, 'Elemental', 2, 'Creature'),
@@ -831,7 +831,7 @@ INSERT INTO `cards` (`cn`, `artist`, `cardindex`, `colors`, `convertedManaCost`,
 (282, 'Yongjae Choi', 32241, 'W', 6, '', 5, '{4}{W}{W}', 6, '3b4a4a04-43f5-5e80-a107-c0495c20931b', 469835, 'Ajani, Inspiring Leader', 0, 4.66, 'mythic', '[+2]: You gain 2 life. Put two +1/+1 counters on up to one target creature.\r\n[âˆ’3]: Exile target creature. Its controller gains 2 life.\r\n[âˆ’10]: Creatures you control gain flying and double strike until end of turn.', 227, 'Ajani', 0, 'Planeswalker'),
 (283, 'Mark Behm', 31927, 'W', 1, '\"The healers of Bant are second to none. I owe then a great deal for their tutelage.\"\r\nâ€”Ajani Goldmane', 0, '{W}', 1, 'bbd98b07-0d36-5215-b89a-b164274f8ee2', 450230, 'Court Cleric', 1, 0.19, 'uncommon', 'Lifelink (Damage dealt by this creature also causes you to gain that much life.)\r\nCourt Cleric gets +1/+1 as long as you control an Ajani planeswalker.', 226, 'Human,Cleric', 1, 'Creature'),
 (283, 'Paul Scott Canavan', 32242, 'W', 5, '', 0, '{3}{W}{W}', 5, '8c546b22-015c-5dea-ad5f-43b02e6cc79b', 469836, 'Goldmane Griffin', 3, 0.24, 'rare', 'Flying, vigilance\r\nWhen Goldmane Griffin enters the battlefield, you may search your library and/or graveyard for a card named Ajani, Inspiring Leader, reveal it, and put it into your hand. If you search your library this way, shuffle.', 227, 'Griffin', 2, 'Creature');
-INSERT INTO `cards` (`cn`, `artist`, `cardindex`, `colors`, `convertedManaCost`, `flavor_text`, `loyalty`, `manaCost`, `manaValue`, `mtgjsonV4Id`, `multiverseId`, `name`, `power`, `price`, `rarity`, `rules_text`, `setCode`, `subtypes`, `toughness`, `types`) VALUES
+INSERT INTO `cards` (`cn`, `artist`, `cardindex`, `colors`, `convertedManaCost`, `flavor_text`, `loyalty`, `manaCost`, `manaValue`, `mtgjsonV4Id`, `multiverseId`, `name`, `power`, `price`, `rarity`, `rules_text`, `s_id`, `subtypes`, `toughness`, `types`) VALUES
 (284, 'Magali Villeneuve', 31928, 'W', 6, 'She watches over the city just as Serra watches over all.', 0, '{4}{W}{W}', 6, '5c05eca7-960e-52e9-b970-e1b60bf5d6ff', 450231, 'Serra\'s Guardian', 5, 0.26, 'rare', 'Flying (This creature can\'t be blocked except by creatures with flying or reach.)\r\nVigilance (Attacking doesn\'t cause this creature to tap.)\r\nOther creatures you control have vigilance.', 226, 'Angel', 5, 'Creature'),
 (284, 'Bayard Wu', 32243, 'W', 2, '\"Now is not the time for your light to fade.\"', 0, '{1}{W}', 2, '6935974f-46f6-5870-a301-fbbe6e3c5898', 469837, 'Savannah Sage', 2, 0.15, 'common', 'When Savannah Sage enters the battlefield, you gain 2 life.', 227, 'Cat,Cleric', 2, 'Creature'),
 (285, 'Viktor Titov', 31929, 'W', 2, 'A pair of domesticated griffins escaped from captivity a century ago. Now the skies are filled with the songs of their descendants.', 0, '{W}{W}', 2, '3ed1ef92-8799-56da-8797-f205c4e0f427', 450232, 'Silverbeak Griffin', 2, 0.2, 'common', 'Flying (This creature can\'t be blocked except by creatures with flying or reach.)', 226, 'Griffin', 2, 'Creature'),
@@ -1702,7 +1702,11 @@ INSERT INTO `owns_card` (`u_id`, `cn`, `count`, `s_id`) VALUES
 (2, 200, 224, 226),
 (3, 3, 227, 226),
 (4, 134, 52, 227),
-(5, 24, 221, 226);
+(5, 24, 221, 226),
+(11, 1, 1, 226),
+(11, 1, 4, 227),
+(11, 3, 1, 226),
+(11, 9, 1, 226);
 
 -- --------------------------------------------------------
 
@@ -1785,7 +1789,7 @@ CREATE TABLE `sets` (
   `s_id` int(11) NOT NULL,
   `size` int(11) DEFAULT NULL,
   `code` varchar(10) DEFAULT NULL,
-  `name` varchar(20) DEFAULT NULL,
+  `s_name` varchar(20) DEFAULT NULL,
   `release_date` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -1793,7 +1797,7 @@ CREATE TABLE `sets` (
 -- Dumping data for table `sets`
 --
 
-INSERT INTO `sets` (`s_id`, `size`, `code`, `name`, `release_date`) VALUES
+INSERT INTO `sets` (`s_id`, `size`, `code`, `s_name`, `release_date`) VALUES
 (0, 383, '10E', 'Tenth Edition', '7/13/2007'),
 (1, 302, '2ED', 'Unlimited Edition', '12/1/1993'),
 (2, 332, '2XM', 'Double Masters', '8/7/2020'),
@@ -2475,8 +2479,8 @@ ALTER TABLE `artists`
 -- Indexes for table `cards`
 --
 ALTER TABLE `cards`
-  ADD PRIMARY KEY (`cn`,`setCode`),
-  ADD KEY `setCode` (`setCode`);
+  ADD PRIMARY KEY (`cn`,`s_id`),
+  ADD KEY `s_id` (`s_id`) USING BTREE;
 
 --
 -- Indexes for table `card_on_wishlist`
@@ -2547,6 +2551,16 @@ ALTER TABLE `sets`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`u_id`);
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `cards`
+--
+ALTER TABLE `cards`
+  ADD CONSTRAINT `FK_SET` FOREIGN KEY (`s_id`) REFERENCES `sets` (`s_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

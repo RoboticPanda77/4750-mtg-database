@@ -6,6 +6,10 @@
                 <div class="homepagebody" style="color:white">
                     <h4 class="text-center">Upload a New Card</h4>
                     <p class="text-center">You can search for and add cards that you own here!</p>
+                    <?php if(isset($_SESSION["add_success"])) {
+                        unset($_SESSION["add_success"]);
+                        echo "<h3 class = \"text-center\" style = \"color: red\">Card Successfully Added!</h3>";
+                    } ?>
                     </p>
                 </div>
             </div>
@@ -41,13 +45,17 @@
                     <table class="pt-2 table">
                         
                         <th>Card Name</th>
+                        <th>Card Artist</th>
                         <th>Add Card</th>
                         <?php 
                         //print_r($data);
+                        //echo $inserted;
                         foreach($data as $cardIndex => $card) {
                             echo "<tr>";
                             echo "<td>" . $card["name"] . "</td>";
-                            echo "<td> <form action = \"?command=upload_card&cardname=". $card["name"] . "\" method=\"post\">
+                            echo "<td>" . $card["artist"] . "</td>";
+                            echo "<td> <form action = \"?command=upload_card&cn=". $card["cn"] . "&s_id=".
+                            $card["s_id"] . "\" method=\"post\">
                                   <button type=\"submit\" class=\"btn btn-outline-primary\">Add</button></form></td>";
                             echo "</tr>";
                         }

@@ -58,7 +58,7 @@
                 <a class="nav-link active" href="?command=welcome">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="?command=howtoDoFunc">Demonstration</a>
+                <a class = "nav-link active" href="?command=collection">Card Collection</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link active" href="?command=friends">Friends List</a>
