@@ -41,7 +41,7 @@ $list_of_packs = $data;
   ?>
   <tr style="color:white">
     <td><?php echo $pack['p_num']; ?></td>
-    <td><?php echo $pack['name']; ?></td>
+    <td><?php echo $pack['s_name']; ?></td>
     <td><?php echo $pack['p_type']; ?></td> 
     <td><?php echo $pack['val_d']; ?></td> 
     <td><a href="?command=pack&packnum= <?php echo $val ?>">View pack</a></td>
