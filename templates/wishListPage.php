@@ -73,8 +73,8 @@
                 <div class="col-sm">
                 <table>
                   <tr>
-                    <td style="color:orange">Minimum Price </td>
-                    <td style="color:orange">Maximum Price </td>
+                    <td style="color:orange">Minimum Price:</td>
+                    <td style="color:orange">Maximum Price:</td>
                   </tr>
                   <tr>
                     <td style="padding-left:auto;padding-right:20px"><input type="number" step="0.01"  class="form-control" name="minPrice" style="width:110px"/></td>
