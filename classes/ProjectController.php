@@ -71,13 +71,36 @@ class ProjectController
     }
     public function get_pack($packnum) {
         $data = $this->db->query("select * from pack_contains natural join cards where u_id = ? and p_num = ?;", "si", $_SESSION["id"], $packnum);
-        $pack = $this->db->query("select * from packs natural join sets where u_id = ? and p_num = ?;", "si", $_SESSION["id"], $packnum);
+        $packs = $this->db->query("select * from packs natural join sets where u_id = ? and p_num = ?;", "si", $_SESSION["id"], $packnum);
+        $pack = $packs[0];
         include("templates/header.php");
         include("templates/single-pack.php");
         include("templates/footer.php");
     }
     public function input_pack() {
-        $data = $this->db->query("select max(p_num) from packs natural join sets where u_id = ?;", "s", $_SESSION["id"]);
+        if(isset($_POST["card_number"])) 
+        {
+            $high_pnum = $this->db->query("select max(p_num) from packs natural join sets where u_id = ?;", "s", $_SESSION["id"]);
+            $pnum = 0;
+            if(isset($high_pnum[0][0]))
+                $pnum = $high_pnum[$pnum];
+            $pnum += 1;
+            $this->db->query("insert into owns_pack values(?, ?, ?)", "iii", $_SESSION["id"], $pnum, $_POST["set"]);
+            $array = array_keys($_POST["card_number"]);
+            $packval = 0;
+            foreach($array as $card)
+            {
+                $packvals = $this->db->query("select price from cards where cn = ? and s_id = ?", "ii", $_POST["card_number"][$card], $_POST["set"]);
+                $packval += $packvals[0][0];
+                $this->db->query("insert into pack_contains values(?, ?, ?, ?)", "iiii", $_SESSION["id"], $pnum, $_POST["card_number"][$card], $_POST["set"]);
+            }
+            $this->db->query("insert into packs values(?, ?, ?, ?, ?)", "iiiis", $_SESSION["id"], $pnum, $_POST["set"], $packval, $_POST["type"]);
+            echo   "<html>
+                        <script type='text/javascript'>
+                            window.location.href = 'index.php'
+                        </script>
+                    </html>";
+        }
         include("templates/header.php");
         include("templates/input-pack.php");
         include("templates/footer.php");
