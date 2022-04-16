@@ -39,6 +39,11 @@ class ProjectController
         } else {
             $data = $this->db->query("select * from cards NATURAL JOIN owns_card JOIN sets ON cards.s_id = sets.s_id where u_id = ?", "i", $_SESSION["id"]);
         }
+        if(isset($_GET["cn"])) {
+            $card_to_display = $this->db->query("select * from cards NATURAL JOIN owns_card JOIN sets ON cards.s_id = sets.s_id
+            where cn = ? AND owns_card.s_id = ? AND u_id = ?;", "iii", $_GET["cn"], $_GET["s_id"], $_SESSION["id"]);
+            $_SESSION["display_full_info"] = true;
+        }
         include("templates/header.php");
         include("templates/collection.php");
         include("templates/footer.php");
@@ -157,7 +162,7 @@ class ProjectController
         }
         include("templates/login.php");
     }
-    
+
     public function run()
     {
         switch ($this->command) {
