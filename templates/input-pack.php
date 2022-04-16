@@ -1,8 +1,16 @@
 <?php
 
+$num_cards = 0;
+$size_submitted = false;
+$set = null;
+$type = null;
+
 if($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['btnAction']))
 {
-	
+	if($_POST['btnAction'] == "Set")
+  {
+    
+  }
 }
 
 ?>
@@ -29,29 +37,47 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['btnAction']))
 
 <body class="large-screen-container" style="background-color: #4a524d">
   
-<form name="mainForm" action="simpleform.php" method="post">   
-  <div class="row mb-3 mx-3">
-    Name:
-    <input type="text" class="form-control" name="name" required/>        
+<form name="mainForm" action="?command=home" method="post">   
+  <div class="col mb-3 mx-3">
+    Set ID:
+    <input type="number" class="form-control" name="set" required min="226" max="227"/>        
   </div>  
   <div class="row mb-3 mx-3">
-    Year:
-    <input type="number" class="form-control" name="year" required min="1" max="4"/> 
-  </div>  
-  <div class="row mb-3 mx-3">
-    Major:
-    <input type="text" class="form-control" name="major" required/>
-  </div>  
-  <input type="submit" value="Add" name="btnAction" class="btn btn-dark" 
-        title="insert a friend" />  
-  <input type="submit" value="Confirm Update" name="btnAction" class="btn btn-dark" 
-        title="update info" />  
-  <input type="submit" value="Confirm Delete" name="btnAction" class="btn btn-danger" 
-        title="delete info" />  
+    Type:
+    <input type="text" class="form-control" name="type" required/> 
+  </div> 
+  <div class="col mb-3 mx-3">
+    Number of Cards:
+    <input type="number" class="form-control" name="set" required/>        
+  </div> 
+  <input type="submit" value="Set" name="btnAction" class="btn btn-dark" 
+        title="Choose Set and Type" /> 
 </form>
 
   
   </table>
+
+  <?php if($size_submitted):?>
+  <table class="w3-table w3-bordered w3-card-4" style="width:90%">
+  <thead>
+  <tr style="background-color:#B0B0B0">
+    <th width="25%">Card Number</th>
+  </tr>
+  </thead>
+      <form action="?command=home" method="post">
+  <?php for ($i = 0; $i < $num_cards; $i++): ?>
+  <tr>
+    <td>
+        <input type="number" name="card_number"/>
+    </td> 
+  </tr>
+  <?php endfor; ?>      
+        <input type="submit" value="Update" name="btnAction" class="btn btn-primary" />
+      </form>
+
+  
+  </table>
+  <?php endif;?>
 
   <!-- JavaScript Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

@@ -64,7 +64,6 @@ class ProjectController
         include("templates/footer.php");
     }
     public function packs() {
-        #$data = $this->db->query("select * from packs natural join sets where u_id = ?;", "i", 1);
         $data = $this->db->query("select * from packs natural join sets where u_id = ?;", "s", $_SESSION["id"]);
         include("templates/header.php");
         include("templates/packs-view.php");
@@ -72,11 +71,13 @@ class ProjectController
     }
     public function get_pack($packnum) {
         $data = $this->db->query("select * from pack_contains natural join cards where u_id = ? and p_num = ?;", "si", $_SESSION["id"], $packnum);
+        $pack = $this->db->query("select * from packs natural join sets where u_id = ? and p_num = ?;", "si", $_SESSION["id"], $packnum);
         include("templates/header.php");
         include("templates/single-pack.php");
         include("templates/footer.php");
     }
     public function input_pack() {
+        $data = $this->db->query("select max(p_num) from packs natural join sets where u_id = ?;", "s", $_SESSION["id"]);
         include("templates/header.php");
         include("templates/input-pack.php");
         include("templates/footer.php");
