@@ -47,7 +47,7 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark px-3 bg-dark">
-        <a class="navbar-brand" href="#">Magic The Gathering Database</a>
+        <a class="navbar-brand" href="?command=home">Magic The Gathering Database</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -61,10 +61,16 @@
                 <a class = "nav-link active" href="?command=collection">Card Collection</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link active" href="?command=friends">Friends List</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link active" href="?command=packs">Your Packs</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link active" href="?command=upload_card">Add A Card</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="?command=wish">Wishlist</a>
             </li>
         </ul>
     </nav>

@@ -25,7 +25,7 @@ $list_of_packs = $data;
 </head>
 
 <body class="large-screen-container" style="background-color: #4a524d">
-  <div style="color:white" class="h1"><?php echo Config::$db["user"]?>'s Packs</div>
+  <div style="color:white" class="h1"><?php echo $_SESSION["username"]?>'s Packs</div>
   <table class="w3-table w3-bordered w3-card-4" style="width:90%">
   <thead>
   <tr style="background-color:#B0B0B0">
@@ -44,12 +44,13 @@ $list_of_packs = $data;
     <td><?php echo $pack['name']; ?></td>
     <td><?php echo $pack['p_type']; ?></td> 
     <td><?php echo $pack['val_d']; ?></td> 
-    <td><a href="?command=pack&packnum= <?php echo $val ?>">View pack</td>
+    <td><a href="?command=pack&packnum= <?php echo $val ?>">View pack</a></td>
   </tr>
   <?php endforeach; ?>
 
   
   </table>
+  <div class="h4"><a href="?command=input_pack" class="link-light">Add a Pack</a></div>
 
   <!-- JavaScript Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
