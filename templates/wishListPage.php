@@ -196,7 +196,9 @@
                 $leng = count($data);
                 if ($leng==0){
                     echo "<html>";
-                    echo "<p style='color:orange;margin-left:525px;font-size:30px;font-weight:bold'>Add some cards to your wishlist!<p>";
+                    echo "<center>";
+                    echo "<p style='margin-left:auto;margin-right:auto;color:orange;font-size:30px;font-weight:bold'>Add some cards to your wishlist!<p>";
+                    echo "</center>";
                     echo "</html>";
                 }
                 else{
