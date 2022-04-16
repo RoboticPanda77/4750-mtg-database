@@ -64,18 +64,45 @@ class ProjectController
         include("templates/footer.php");
     }
     public function packs() {
-        #$data = $this->db->query("select * from packs natural join sets where u_id = ?;", "i", 1);
-        $data = $this->db->query("select * from packs natural join sets where u_id = ?;", "s", $_SESSION["u_id"]);
+        $data = $this->db->query("select * from packs natural join sets where u_id = ?;", "s", $_SESSION["id"]);
         include("templates/header.php");
         include("templates/packs-view.php");
-        //print_r($data); <-- useful print function for arrays
         include("templates/footer.php");
     }
     public function get_pack($packnum) {
-        $data = $this->db->query("select * from pack_contains natural join cards where u_id = ? and p_num = ?;", "si", $_SESSION["u_id"], $packnum);
+        $data = $this->db->query("select * from pack_contains natural join cards where u_id = ? and p_num = ?;", "si", $_SESSION["id"], $packnum);
+        $packs = $this->db->query("select * from packs natural join sets where u_id = ? and p_num = ?;", "si", $_SESSION["id"], $packnum);
+        $pack = $packs[0];
         include("templates/header.php");
         include("templates/single-pack.php");
-        //print_r($data); <-- useful print function for arrays
+        include("templates/footer.php");
+    }
+    public function input_pack() {
+        if(isset($_POST["card_number"])) 
+        {
+            $high_pnum = $this->db->query("select max(p_num) from packs natural join sets where u_id = ?;", "s", $_SESSION["id"]);
+            $pnum = 0;
+            if(isset($high_pnum[0]["max(p_num)"]))
+                $pnum = $high_pnum[0]["max(p_num)"];
+            $pnum += 1;
+            $this->db->query("insert into owns_pack values(?, ?, ?)", "iii", $_SESSION["id"], $pnum, $_POST["set"]);
+            $array = array_keys($_POST["card_number"]);
+            $packval = 0;
+            foreach($array as $card)
+            {
+                $packvals = $this->db->query("select price from cards where cn = ? and s_id = ?", "ii", $_POST["card_number"][$card], $_POST["set"]);
+                $packval += $packvals[0]["price"];
+                $this->db->query("insert into pack_contains values(?, ?, ?, ?)", "iiii", $_SESSION["id"], $pnum, $_POST["card_number"][$card], $_POST["set"]);
+            }
+            $this->db->query("insert into packs values(?, ?, ?, ?, ?)", "iiiis", $_SESSION["id"], $pnum, $_POST["set"], $packval, $_POST["type"]);
+            echo   "<html>
+                        <script type='text/javascript'>
+                            window.location.href = '?command=packs'
+                        </script>
+                    </html>";
+        }
+        include("templates/header.php");
+        include("templates/input-pack.php");
         include("templates/footer.php");
     }
 
@@ -107,11 +134,15 @@ class ProjectController
                 break;
             case "upload_card":
                 $this->upload_card();
+                break;
             case "wish":
                 $this->wishList();
                 break;
             case "logIn":
                 $this->logIn();
+                break;
+            case "input_pack":
+                $this->input_pack();
                 break;
             default:
                 $this->welcome();

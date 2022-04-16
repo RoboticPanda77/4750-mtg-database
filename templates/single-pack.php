@@ -25,13 +25,12 @@ $cards_in_pack = $data;
 </head>
 
 <body class="large-screen-container" style="background-color: #4a524d">
-  
+<div><?php echo $_SESSION['username']; ?>'s <?php echo $pack['p_type']?> Pack <?php echo $pack['p_num']; ?></div>
   <table class="w3-table w3-bordered w3-card-4" style="width:90%">
   <thead>
   <tr style="background-color:#B0B0B0">
     <th>Card</th>        
     <th>Value</th>
-    <th></th>
   </tr>
   </thead>
   <?php foreach ($cards_in_pack as $card): ?>

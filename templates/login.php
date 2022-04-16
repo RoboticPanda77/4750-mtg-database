@@ -20,7 +20,7 @@
             echo "</html>";
         }
         else{
-            $checkU = $this->db->query("select * from users where username='" . $_POST["userName"] . "';");
+            $checkU = $this->db->query("select * from users where username= ?;", "s", $_POST["userName"]);
             if(count($checkU) == 1){
                 if (password_verify($_POST["password"], $checkU[0]['password'])){
                     session_destroy();
@@ -28,7 +28,7 @@
                     $_SESSION["loggedin"] = true;
                     $_SESSION["id"] = $checkU[0]['u_id'];
                     $_SESSION["username"] = $checkU[0]['username'];
-                    header("Location: http://localhost/4750-mtg-database/index.php");
+                    header("Location: index.php");
                     exit();
                 }
                 else{
@@ -67,18 +67,18 @@
             echo "</html>";
         }
         else{
-            $checkU = $this->db->query("select * from users where username='" . $_POST["userName2"] . "';");
+            $checkU = $this->db->query("select * from users where username= ?;", "s", $_POST["userName2"]);
             if(count($checkU) == 0){
                 $maxId = $this->db->query("select max(u_id) from users");
                 $newId = intval($maxId[0]['max(u_id)']) + 1;
                 $hashed_p = password_hash($_POST["password2"], PASSWORD_DEFAULT);
-                $this->db->query("insert into users values(". $newId . ", '" . $_POST["userName2"] . "', 0, '". $hashed_p . "');");
+                $this->db->query("insert into users values(?, ?, ?);", "iss", $newId, $_POST["userName2"], $hashed_p);
                 $_SESSION["loggedin"] = true;
                 $_SESSION["id"] = $newId;
                 $_SESSION["username"] = $_POST["userName2"];
                 echo "<html>";
                 echo "<script type='text/javascript'>";
-                echo "window.location.href = 'http://localhost/4750-mtg-database/index.php'";
+                echo "window.location.href = 'index.php'";
                 echo "</script>";
                 echo "</html>";
 
