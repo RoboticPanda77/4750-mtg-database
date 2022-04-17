@@ -27,6 +27,7 @@ $list_of_packs = $data;
 <body class="large-screen-container" style="background-color: #4a524d">
   <div  class="pt-4 container-fluid" >
   <div style="color:white" class="h1"><?php echo $_SESSION["username"]?>'s Packs</div>
+  <div style="color:white" class="h4">Net worth: <?php echo $networth[0]["networth"] ?></div>
       <table class="pt-2 table"  style="background-color:gray">
       <thead>
       <tr style="background-color:#B0B0B0">
