@@ -103,6 +103,7 @@ class ProjectController
     
     public function packs() {
         $data = $this->db->query("select * from packs natural join sets where u_id = ?;", "s", $_SESSION["id"]);
+        $networth = $this->db->query("select networth from users where u_id = ?", "i", $_SESSION["id"]);
         include("templates/header.php");
         include("templates/packs-view.php");
         include("templates/footer.php");
