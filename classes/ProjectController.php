@@ -29,15 +29,16 @@ class ProjectController
         include("templates/welcome.php");
         include("templates/footer.php");
     }
-    public function collection() {
+    public function collection($column) {
         $this->isLoggedIn();
         if(isset($_POST["searchforcard"])) {
             $searchString = "%" . $_POST["searchforcard"] . "%";
             $data = $this->db->query("select * from cards NATURAL JOIN owns_card JOIN sets ON 
-            cards.s_id = sets.s_id where name LIKE ? AND u_id = ?", "si", $searchString, $_SESSION["id"]);
+            cards.s_id = sets.s_id where name LIKE ? AND u_id = ?;", "sis", $searchString, $_SESSION["id"]);
             $thisRan = $searchString;
         } else {
-            $data = $this->db->query("select * from cards NATURAL JOIN owns_card JOIN sets ON cards.s_id = sets.s_id where u_id = ?", "i", $_SESSION["id"]);
+            $data = $this->db->query("CALL orderByColumn(?, ?);", "si", $column, $_SESSION["id"]);
+            // $data = $this->db->query("select * from cards NATURAL JOIN owns_card JOIN sets ON cards.s_id = sets.s_id where u_id = ? order by ?;", "is", $_SESSION["id"], $column);
         }
         if(isset($_GET["cn"])) {
             $card_to_display = $this->db->query("select * from cards NATURAL JOIN owns_card JOIN sets ON cards.s_id = sets.s_id
@@ -215,7 +216,11 @@ class ProjectController
                 $this->logIn();
                 break;
             case "collection":
-                $this->collection();
+                $column = "name";
+                if(isset($_GET['column'])) {
+                    $column = $_GET['column'];
+                }
+                $this->collection($column);
                 break;
             case "input_pack":
                 $this->input_pack();

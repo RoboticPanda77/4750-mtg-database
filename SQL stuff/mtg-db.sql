@@ -25,10 +25,14 @@ DELIMITER $$
 --
 -- Procedures
 --
-CREATE DEFINER=`root`@`localhost` PROCEDURE `orderByColumn` (IN `column_name` VARCHAR(30), IN `user_id` INT)  SELECT * FROM cards NATURAL JOIN owns_card
+CREATE DEFINER=`root`@`localhost` PROCEDURE `orderByColumn`(IN `column_name` ENUM('name','artist','s_name','count'), IN `user_id` INT)
+SELECT * FROM cards NATURAL JOIN owns_card NATURAL JOIN sets
     WHERE u_id = user_id
-    ORDER BY column_name$$
-
+    ORDER BY
+    	CASE WHEN column_name = "name" THEN name END,
+    	CASE WHEN column_name = "artist" THEN artist END,
+    	CASE WHEN column_name = "s_name" THEN s_name END,
+    	CASE WHEN column_name = "count" THEN count END$$
 DELIMITER ;
 
 -- --------------------------------------------------------
