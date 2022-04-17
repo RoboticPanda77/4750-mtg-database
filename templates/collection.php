@@ -127,11 +127,8 @@
         <div class="pt-4 container-fluid">
             <h5>Search for cards by name or use another sorting option!</h5>
             <div class="row">
-                <div class="col-md-3">
-
-                </div>
-                <div class="col-md-4 justify-content-center text-center">
-                    <div class="input-group">
+                <div class="col-md-12 mt-1 d-flex justify-content-center text-center">
+                    <div class="input-group justify-content-center text-center">
                         <form action="?command=collection" method="post" class="form-group">
                             <div class="input-group">
                                 <input type="text" class="form-control rounded" name="searchforcard" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
