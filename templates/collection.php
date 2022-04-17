@@ -150,16 +150,16 @@
                 <div class="col-md-8">
                     <table class="pt-2 table"  style="background-color:gray">
 
-                        <th>Card Name</th>
-                        <th>Card Artist</th>
-                        <th>Set</th>
-                        <th>Cards Owned</th>
+                        <th><a href="?command=collection&column=<?php echo "name"?>">Card Name</a></th>
+                        <th><a href="?command=collection&column=<?php echo "artist"?>">Card Artist</a></th>
+                        <th><a href="?command=collection&column=<?php echo "s_name"?>">Set</a></th>
+                        <th><a href="?command=collection&column=<?php echo "count"?>">Cards Owned</a></th>
                         <th>Full Info</th>
                         <?php
                         //print_r($data);
                         //echo $inserted;
                         //print_r($card_to_display);
-                        foreach ($data as $cardIndex => $card) {
+                        foreach ($data as $card) {
                             echo "<tr>";
                             echo "<td>" . $card["name"] . "</td>";
                             echo "<td>" . $card["artist"] . "</td>";
