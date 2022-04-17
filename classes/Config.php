@@ -1,6 +1,6 @@
 <?php
     class Config {
-        public static $db = ["host" => 'localhost:3307', "user" => 'root', "pass" => '', "database" => "mtg-db"];
+        public static $db = ["host" => 'localhost', "user" => 'root', "pass" => '', "database" => "mtg-db"];
         //Enable for local db work
         /*
         $username = 'root';
