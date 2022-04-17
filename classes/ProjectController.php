@@ -17,7 +17,7 @@ class ProjectController
         if (!isset($_SESSION["loggedin"])) {
             session_start();
             $_SESSION['badlogaccess'] = true;
-            header('Location: /4750-mtg-database/index.php');
+            header('Location: index.php');
             exit();
         }
        
@@ -116,6 +116,15 @@ class ProjectController
         include("templates/single-pack.php");
         include("templates/footer.php");
     }
+    public function artist($aname) {
+        $this->isLoggedIn();
+        $artist = $this->db->query("select * from artists where artist = ?;", "s", $aname);
+        $a_id = $artist[0]["a_id"];
+        $cards = $this->db->query("select * from drawn_by natural join cards where a_id = ?;", "i", $a_id);
+        include("templates/header.php");
+        include("templates/artist.php");
+        include("templates/footer.php");
+    }
     public function input_pack() {
         if(isset($_POST["card_number"])) 
         {
@@ -129,9 +138,15 @@ class ProjectController
             $packval = 0;
             foreach($array as $card)
             {
-                $packvals = $this->db->query("select price from cards where cn = ? and s_id = ?", "ii", $_POST["card_number"][$card], $_POST["set"]);
+                $packvals = $this->db->query("select price from cards where cn = ? and s_id = ?;", "ii", $_POST["card_number"][$card], $_POST["set"]);
                 $packval += $packvals[0]["price"];
-                $this->db->query("insert into pack_contains values(?, ?, ?, ?)", "iiii", $_SESSION["id"], $pnum, $_POST["card_number"][$card], $_POST["set"]);
+                $this->db->query("insert into pack_contains values(?, ?, ?, ?);", "iiii", $_SESSION["id"], $pnum, $_POST["card_number"][$card], $_POST["set"]);
+                $card_in_collection = $this->db->query("select count from owns_card where u_id = ? and cn = ? and s_id = ?;", "iii", $_SESSION["id"], $_POST["card_number"][$card], $_POST["set"]);
+                if(isset($card_in_collection[0]["count"]))
+                {
+                    $this->db->query("update owns_card set count = ? where u_id = ? and cn = ? and s_id = ?", "iiii", $card_in_collection[0]["count"] + 1, $_SESSION["id"], $_POST["card_number"][$card], $_POST["set"]);
+                }
+                else $this->db->query("insert into owns_card values(?, ?, ?, ?);", "iiii", $_SESSION["id"], $_POST["card_number"][$card], 1, $_POST["set"]);
             }
             $this->db->query("insert into packs values(?, ?, ?, ?, ?)", "iiiis", $_SESSION["id"], $pnum, $_POST["set"], $packval, $_POST["type"]);
             echo   "<html>
@@ -185,6 +200,10 @@ class ProjectController
             case "pack":
                 $packnum = $_GET['packnum'];
                 $this->get_pack($packnum);
+                break;
+            case "artist":
+                $aname = $_GET['aname'];
+                $this->artist($aname);
                 break;
             case "upload_card":
                 $this->upload_card();

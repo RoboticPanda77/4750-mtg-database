@@ -972,14 +972,14 @@ INSERT INTO `card_on_wishlist` (`u_id`, `cn`, `s_id`) VALUES
 CREATE TABLE `drawn_by` (
   `a_id` int(11) NOT NULL,
   `cn` int(11) NOT NULL,
-  `setCode` int(11) NOT NULL
+  `s_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `drawn_by`
 --
 
-INSERT INTO `drawn_by` (`a_id`, `cn`, `setCode`) VALUES
+INSERT INTO `drawn_by` (`a_id`, `cn`, `s_id`) VALUES
 (1, 1, 226),
 (1, 18, 227),
 (1, 51, 227),
@@ -2494,8 +2494,8 @@ ALTER TABLE `card_on_wishlist`
 -- Indexes for table `drawn_by`
 --
 ALTER TABLE `drawn_by`
-  ADD PRIMARY KEY (`a_id`,`cn`,`setCode`),
-  ADD KEY `FK_CARD` (`cn`,`setCode`);
+  ADD PRIMARY KEY (`a_id`,`cn`,`s_id`),
+  ADD KEY `FK_CARD` (`cn`,`s_id`);
 
 --
 -- Indexes for table `friends_with`

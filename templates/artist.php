@@ -1,7 +1,5 @@
 <?php
 
-$cards_in_pack = $data;
-
 ?>
 
 <!DOCTYPE html>
@@ -25,25 +23,23 @@ $cards_in_pack = $data;
 </head>
 
 <body class="large-screen-container" style="background-color: #4a524d">
-<div  class="pt-4 container-fluid" style="color:white">
-<div class="h1"><?php echo $_SESSION['username']; ?>'s <?php echo $pack['p_type']?> Pack <?php echo $pack['p_num']; ?></div>
-  <table class="w3-table w3-bordered w3-card-4" style="width:90%">
-  <thead style="color:black">
+<div  class="pt-4 container-fluid" >
+<div class="h1" style="color:white"><?php echo $artist[0]['artist']; ?>'s Card Art</div>
+  <table class="w3-table w3-bordered w3-card-4"  style="width:90%"> 
+  <thead>
   <tr style="background-color:#B0B0B0">
-    <th>Card</th>        
-    <th>Value</th>
+    <th>Card</th>
   </tr>
   </thead>
-  <?php foreach ($cards_in_pack as $card): ?>
+  <?php foreach ($cards as $card): ?>
   <tr style="color:white">
     <td><?php echo $card['name']; ?></td>
-    <td><?php echo $card['price']; ?></td>
   </tr>
   <?php endforeach; ?>
 
   
   </table>
-  </div>
+</div>
   <!-- JavaScript Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/less@4"></script>
