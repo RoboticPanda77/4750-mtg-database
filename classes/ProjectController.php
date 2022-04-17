@@ -103,6 +103,7 @@ class ProjectController
     }
     
     public function packs() {
+        $this->isLoggedIn();
         $data = $this->db->query("select * from packs natural join sets where u_id = ?;", "s", $_SESSION["id"]);
         include("templates/header.php");
         include("templates/packs-view.php");
@@ -127,6 +128,7 @@ class ProjectController
         include("templates/footer.php");
     }
     public function input_pack() {
+        $this->isLoggedIn();
         if(isset($_POST["card_number"])) 
         {
             $high_pnum = $this->db->query("select max(p_num) from packs natural join sets where u_id = ?;", "s", $_SESSION["id"]);
