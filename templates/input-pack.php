@@ -62,7 +62,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['btnAction']))
     <?php for ($i = 0; $i < $_POST["num"]; $i++): ?>
   <tr>
     <td>
-        <input type="number" name="card_number[]"/>
+        <input type="number" required name="card_number[]"/>
     </td> 
   </tr>
   <?php endfor; ?>
