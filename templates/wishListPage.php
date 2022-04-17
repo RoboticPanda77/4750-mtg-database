@@ -154,7 +154,7 @@
                 $addCheck = $this->db->query("select * from card_on_wishlist where u_id=" . $_SESSION["id"] . " and cn=" . $_POST["cardNumber"] . " and s_id=" . $_POST["setNumber"] . ";");
                 if(count($addCheck)==0){
                   $this->db->query("insert into card_on_wishlist values(" . $_SESSION["id"] . ", " . $_POST["cardNumber"] . ", " . $_POST["setNumber"] . ")");
-                  $card = $this->db->query("select * from cards where cn=" . $_POST["cardNumber"] . " and setCode=" . $_POST["setNumber"]);
+                  $card = $this->db->query("select * from cards where cn=" . $_POST["cardNumber"] . " and s_id=" . $_POST["setNumber"]);
                   $cardVal = $card[0]['price']; 
                   $this->db->query("update wishlist set val_d =(val_d + " . $cardVal . ") where u_id=" . $_SESSION["id"]);
                 }
@@ -163,7 +163,7 @@
                 $remCheck = $this->db->query("select * from card_on_wishlist where u_id=" . $_SESSION["id"] . " and cn=" . $_POST["cardNumber2"] . " and s_id=" . $_POST["setNumber2"] . ";");
                 if(count($remCheck)==1){
                   $this->db->query("delete from card_on_wishlist where u_id=" . $_SESSION["id"] . " and cn=" . $_POST["cardNumber2"] . " and s_id=" . $_POST["setNumber2"] . ";");
-                  $card = $this->db->query("select * from cards where cn=" . $_POST["cardNumber2"] . " and setCode=" . $_POST["setNumber2"]);
+                  $card = $this->db->query("select * from cards where cn=" . $_POST["cardNumber2"] . " and s_id=" . $_POST["setNumber2"]);
                   $cardVal = $card[0]['price']; 
                   $this->db->query("update wishlist set val_d =(val_d - " . $cardVal . ") where u_id=" . $_SESSION["id"]);
                 }
@@ -188,7 +188,7 @@
                     $conds = "and price<=" . $_POST["maxPrice"] . " " . $conds;
                   }
                   $conds = trim($conds) . ";";
-                  $data = $this->db->query("select * from (cards c JOIN card_on_wishlist cw ON c.cn=cw.cn AND c.setCode=cw.s_id) where u_id =" . $_SESSION["id"] . " " . $conds); 
+                  $data = $this->db->query("select * from (cards NATURAL JOIN card_on_wishlist) where u_id =" . $_SESSION["id"] . " " . $conds); 
                 }
                 else{
                   $data = $this->db->query("select * from card_on_wishlist where u_id = ?;", "i", $_SESSION["id"]);
@@ -217,13 +217,13 @@
                                         'power'=>'Power',
                                         'price'=>'Price',
                                         'rules_text'=>'Rules Text',
-                                        'setCode'=>'Set Code',
+                                        's_id'=>'Set Code',
                                         'subtypes'=>'Subtypes',
                                         'toughness'=>'Toughness',
                                         'types'=>'Types');
                     $rarToCol = array('common'=> 'black', 'uncommon'=> 'silver', 'rare'=>'gold', 'mythic'=>'#CD7F32');
                     for($c=0; $c < $leng; $c++){
-                        $s_data = $this->db->query("select * from cards where cn = ? AND setCode = ?", "ii", $data[$c]['cn'], $data[$c]['s_id']);
+                        $s_data = $this->db->query("select * from cards where cn = ? AND s_id = ?", "ii", $data[$c]['cn'], $data[$c]['s_id']);
                         $c1 = $c + 1;
                         $cName = $s_data[0]['name'];
                         $cCol = $rarToCol[$s_data[0]['rarity']];
